@@ -16,8 +16,6 @@ export default function Home() {
     <ProjectsSection/>
     <ClientCarousel/>
     <TestimonialSection/>
-    <TestimonialSection/>
-    <Footer/>
     </>
   )
 }

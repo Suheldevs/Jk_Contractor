@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, MapPin, Calendar, ArrowRight } from 'lucide-react';
 import projects from '../data/ProjectData';
-const ProjectsSection = () => {
+const ProjectPage = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -200,4 +200,4 @@ const ProjectsSection = () => {
   );
 };
 
-export default ProjectsSection;
+export default ProjectPage;

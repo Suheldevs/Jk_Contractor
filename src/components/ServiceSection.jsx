@@ -163,7 +163,7 @@ const ServicesSection = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/800/600" 
+                src="https://picsum.photos/800/600?random=1" 
                 alt="JK Contractor Service Team" 
                 className="w-full h-full object-cover"
               />

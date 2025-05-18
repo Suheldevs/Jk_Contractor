@@ -82,7 +82,7 @@ const Header = () => {
     },
     {
       name: 'Projects',
-      path: '/projects',
+      path: '/project',
       icon: <Grid size={18} />,
       hasDropdown: false,
     },
@@ -94,7 +94,7 @@ const Header = () => {
       dropdownItems: [
         { name: 'Vehicles & Equipment', path: '/more/vehicles', icon: <Truck size={16} /> },
         { name: 'Gallery', path: '/more/gallery', icon: <Image size={16} /> },
-        { name: 'Blog', path: '/more/blog', icon: <FileText size={16} /> },
+        { name: 'Blog', path: '/blog', icon: <FileText size={16} /> },
       ],
     },
     {
