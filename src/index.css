@@ -1,1 +1,18 @@
 @import "tailwindcss";
+body {
+  /* font-family: "Inter", sans-serif; */
+   /* font-family: "Space Grotesk", sans-serif; */
+    /* font-family: "Merriweather", serif; */
+    font-family: "IBM Plex Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+.play{
+ font-family: "Playfair Display", serif;
+}
+html{
+  width: 100%;
+  overflow-x: hidden;
+}

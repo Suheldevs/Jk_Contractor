@@ -3,84 +3,15 @@ import { Clock, Heart, MessageCircle, ChevronLeft, Share2, BookmarkPlus, ArrowRi
 import { Link, useParams } from 'react-router-dom';
 import blogData from '../Data/BlogData'
 import Breadcrumb from '../components/Breadcrumb';
-// Mock blog data - in a real app, this would come from a data source
-// const blogData = [
-//   {
-//     id: 1,
-//     title: "The Future of Sustainable Architecture",
-//     slug: "future-sustainable-architecture",
-//     category: "Architecture",
-//     description: "Exploring the latest trends in green building design and how sustainability is shaping modern architecture.",
-//     image: "https://picsum.photos/600/400?random=1",
-//     date: "April 15, 2025",
-//     readTime: "8 min read",
-//     likes: 243,
-//     comments: 42,
-//     content: `
-//       <p class="mb-4">Sustainable architecture has evolved significantly over the past decade. Today's green buildings are not just about energy efficiency but are becoming holistic ecosystems that contribute positively to their environments.</p>
-      
-//       <h2 class="text-2xl font-bold my-6">The Rise of Biophilic Design</h2>
-//       <p class="mb-4">Biophilic design integrates natural elements into built environments, creating spaces that connect occupants with nature. This approach has proven to reduce stress, enhance creativity, and improve overall well-being.</p>
-      
-//       <h2 class="text-2xl font-bold my-6">Net-Zero Energy Buildings</h2>
-//       <p class="mb-4">The push toward net-zero energy buildings continues to gain momentum as technology advances and costs decrease. These structures produce as much energy as they consume through a combination of energy-efficient design and renewable energy generation.</p>
-      
-//       <h2 class="text-2xl font-bold my-6">Innovative Materials</h2>
-//       <p class="mb-4">From self-healing concrete to transparent wood, innovative materials are revolutionizing the construction industry. These materials offer enhanced durability, better insulation, and reduced environmental impact.</p>
-      
-//       <h2 class="text-2xl font-bold my-6">Smart Buildings</h2>
-//       <p class="mb-4">IoT technology is enabling buildings to become smarter and more responsive to occupants' needs. Automated systems can optimize energy use, improve comfort, and enhance security while providing valuable data for future design improvements.</p>
-//     `
-//   },
-//   {
-//     id: 2,
-//     title: "Urban Gardens: Bringing Nature to City Spaces",
-//     slug: "urban-gardens-city-spaces",
-//     category: "Urban Planning",
-//     description: "How urban gardening initiatives are transforming concrete jungles into green oases across major cities.",
-//     image: "https://picsum.photos/600/400?random=2",
-//     date: "April 10, 2025",
-//     readTime: "6 min read",
-//     likes: 189,
-//     comments: 35
-//   },
-//   {
-//     id: 3,
-//     title: "Minimalist Home Design for Modern Living",
-//     slug: "minimalist-home-design",
-//     category: "Interior Design",
-//     description: "Embracing simplicity and functionality in contemporary home spaces.",
-//     image: "https://picsum.photos/600/400?random=3",
-//     date: "April 5, 2025",
-//     readTime: "5 min read",
-//     likes: 210,
-//     comments: 28
-//   },
-//   {
-//     id: 4,
-//     title: "Revitalizing Historic Buildings for Contemporary Use",
-//     slug: "revitalizing-historic-buildings",
-//     category: "Preservation",
-//     description: "The delicate balance of preserving architectural heritage while adapting spaces for modern needs.",
-//     image: "https://picsum.photos/600/400?random=4",
-//     date: "March 30, 2025",
-//     readTime: "7 min read",
-//     likes: 176,
-//     comments: 31
-//   }
-// ];
-
 export default function BlogDetail() {
   const { slug } = useParams();
   const [blog, setBlog] = useState(null);
   const [relatedBlogs, setRelatedBlogs] = useState([]);
   
   useEffect(() => {
-    // Find the current blog post by slug
     const currentBlog = blogData.find(blog => blog.slug === slug);
     setBlog(currentBlog);
     
-    // Get other blog posts for the "More Articles" section
     if (currentBlog) {
       const otherBlogs = blogData.filter(item => item.id !== currentBlog.id).slice(0, 3);
       setRelatedBlogs(otherBlogs);

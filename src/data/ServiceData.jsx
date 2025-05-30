@@ -65,14 +65,14 @@
       category: ['specialized'],
       color: 'bg-green-500'
     },
-    // {
-    //   id: 7,
-    //   title: 'Other Services',
-    //   description: 'Customized support services and specialized solutions tailored to meet unique operational requirements.',
-    //   icon: <Settings size={24} />,
-    //   image: '/api/placeholder/600/400',
-    //   category: ['airport', 'specialized'],
-    //   color: 'bg-purple-500'
-    // }
+    {
+      id: 7,
+      title: 'Other Services',
+      description: 'Customized support services and specialized solutions tailored to meet unique operational requirements.',
+      icon: <Settings size={24} />,
+      image: '/api/placeholder/600/400',
+      category: ['airport', 'specialized'],
+      color: 'bg-purple-500'
+    }
   ];
   export default services

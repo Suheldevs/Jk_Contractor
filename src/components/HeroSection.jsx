@@ -34,15 +34,14 @@ const HeroSection = () => {
 
         </div>
         
-        {/* Overlay gradient */}
-        {/* <div className="absolute inset-0 bg-gradient-to-r from-red-900/80 to-black/70"></div> */}
+        {/* <div className="absolute inset-0 bg-neutral-950/60"></div> */}
       </div>
 
       {/* Content */}
       <div className="relative h-full flex flex-col items-center justify-center text-white px-4 sm:px-6 lg:px-8">
         <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           {/* Logo/Brand */}
-          <div className="mb-8 inline-flex">
+          {/* <div className="mb-8 inline-flex">
             <div className="relative">
               <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center border-4 border-red-600">
                 <span className="text-red-600 font-bold text-3xl">JK</span>
@@ -51,12 +50,12 @@ const HeroSection = () => {
                 SINCE 2005
               </div>
             </div>
-          </div>
-          
+          </div> */}
+           <div className=" inline-flex border text border-neutral-000/90  justify-center items-center gap-2 mb-2 bg-black/0 p-2 px-4 rounded-full text-lg"><div className=" bg-red-600 h-2 w-2 rounded-full animate-pulse"></div> Welcome To JK Contractor</div>
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
             <span className="block">Delivering Excellence in</span>
-            <span className="block text-red-400">Airport Operations</span>
+            <span className="block text-red-600">Airport Operations</span>
           </h1>
           
           {/* Tagline */}

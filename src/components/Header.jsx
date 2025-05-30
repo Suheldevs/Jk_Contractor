@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { 
   Menu, 
   X, 
@@ -12,8 +11,11 @@ import {
   MapPin,
   Truck,
   Image,
-  FileText
+  FileText,
+  Phone,
+  Mail
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +25,7 @@ const Header = () => {
   // Handle scrolling effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 20) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -71,13 +73,12 @@ const Header = () => {
       icon: <Briefcase size={18} />,
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Waste Management', path: '/services/waste-management' },
-        { name: 'Housekeeping & Facilities', path: '/services/housekeeping' },
-        { name: 'Transport & Logistics', path: '/services/transport' },
-        { name: 'Sweeping Machines & Cleaning Solutions', path: '/services/cleaning-solutions' },
-        { name: 'Food & Beverage', path: '/services/food' },
-        { name: 'Civil & Horticulture', path: '/services/civil' },
-        { name: 'Other Services', path: '/services/other' },
+        { name: 'Construction & Civil Work', path: '/services/construction' },
+        { name: 'Project Management', path: '/services/project-management' },
+        { name: 'Architectural Design', path: '/services/design' },
+        { name: 'Interior Solutions', path: '/services/interior' },
+        { name: 'Renovation & Remodeling', path: '/services/renovation' },
+        { name: 'Consulting Services', path: '/services/consulting' },
       ],
     },
     {
@@ -92,142 +93,204 @@ const Header = () => {
       icon: <MapPin size={18} />,
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Vehicles & Equipment', path: '/more/vehicles', icon: <Truck size={16} /> },
-        { name: 'Gallery', path: '/more/gallery', icon: <Image size={16} /> },
-        { name: 'Blog', path: '/blog', icon: <FileText size={16} /> },
+        { name: 'Equipment & Machinery', path: '/vehicles', icon: <Truck size={16} /> },
+        { name: 'Project Gallery', path: '/gallery', icon: <Image size={16} /> },
+        { name: 'Blog & Updates', path: '/blog', icon: <FileText size={16} /> },
       ],
-    },
-    {
-      name: 'Contact Us',
-      path: '/contact',
-      icon: <Contact size={18} />,
-      hasDropdown: false,
     },
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-red-700 shadow-lg' : 'bg-red-600'}`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center">
-              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-red-600 font-bold text-xl">
-                RS
-              </div>
-              <span className="ml-3 text-white font-bold text-xl hidden sm:block">RedService</span>
-            </Link>
-          </div>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-1">
-            {navItems.map((item) => (
-              <div key={item.name} className="relative group">
-                {item.hasDropdown ? (
-                  <button 
-                    className="flex items-center px-3 py-2 text-white hover:bg-red-500 rounded-md transition-colors"
-                    onClick={() => toggleDropdown(item.name)}
-                  >
-                    <span className="mr-1">{item.icon}</span>
-                    <span>{item.name}</span>
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  </button>
-                ) : (
-                  <Link 
-                    to={item.path} 
-                    className="flex items-center px-3 py-2 text-white hover:bg-red-500 rounded-md transition-colors"
-                  >
-                    <span className="mr-1">{item.icon}</span>
-                    <span>{item.name}</span>
-                  </Link>
-                )}
-                
-                {/* Dropdown for desktop */}
-                {item.hasDropdown && (
-                  <div className="absolute left-0 mt-2 w-60 bg-white rounded-md shadow-lg overflow-hidden z-20 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 origin-top-left">
-                    <div className="py-1">
-                      {item.dropdownItems.map((dropdown) => (
-                        <Link
-                          key={dropdown.name}
-                          to={dropdown.path}
-                          className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700"
-                        >
-                          {dropdown.icon && <span className="mr-2">{dropdown.icon}</span>}
-                          {dropdown.name}
-                        </Link>
-                      ))}
-                    </div>
+    <>
+
+      <header className={`fixed w-full z-50 transition-all duration-500 ${
+        scrolled 
+          ? 'bg-zinc-950 backdrop-blur-xl border-b border-white/20 shadow-2xl' 
+          : 'bg-gradient-to-r'
+      }`}>
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="flex items-center justify-between h-16 lg:h-20">
+            {/* Logo Section */}
+            <div className="flex-shrink-0 group">
+              <a href="/" className="flex items-center space-x-3">
+                <div className={`relative w-12 h-12 rounded-2xl transition-all duration-300 ${
+                  scrolled 
+                    ? 'bg-gradient-to-br from-orange-400 to-red-500 shadow-lg shadow-orange-500/25' 
+                    : 'bg-gradient-to-br from-orange-500 to-red-600'
+                } group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-orange-500/40`}>
+                  <div className="absolute inset-0 rounded-2xl bg-white/20 backdrop-blur-sm" />
+                  <div className="relative flex items-center justify-center w-full h-full text-white font-bold text-lg">
+                    JK
                   </div>
-                )}
+                  <div className="absolute inset-0 rounded-2xl border border-white/30" />
+                </div>
+                <div className="hidden sm:block">
+                  <div className={`font-bold text-xl transition-colors duration-300 ${
+                    scrolled ? 'text-slate-100' : 'text-white'
+                  }`}>
+                    JKContractor
+                  </div>
+                  <div className={`text-xs font-medium transition-colors duration-300 ${
+                    scrolled ? 'text-slate-200' : 'text-orange-200'
+                  }`}>
+                    Building Excellence
+                  </div>
+                </div>
+              </a>
+            </div>
+            
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-1">
+              {navItems.map((item) => (
+                <div key={item.name} className="relative group">
+                  {item.hasDropdown ? (
+                    <button className={`flex items-center px-4 py-2.5 rounded-xl transition-all duration-300 ${
+                      scrolled 
+                        ? 'text-slate-100 hover:bg-slate-100 hover:text-slate-900' 
+                        : 'text-white hover:bg-white/10 hover:backdrop-blur-sm'
+                    } group-hover:scale-105`}>
+                      <span className="mr-2">{item.icon}</span>
+                      <span className="font-medium">{item.name}</span>
+                      <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+                    </button>
+                  ) : (
+                    <Link to={item.path} className={`flex items-center px-4 py-2.5 rounded-xl transition-all duration-300 ${
+                      scrolled 
+                        ? 'text-slate-100 hover:bg-slate-100 hover:text-slate-900' 
+                        : 'text-white hover:bg-white/10 hover:backdrop-blur-sm'
+                    } hover:scale-105`}>
+                      <span className="mr-2">{item.icon}</span>
+                      <span className="font-medium">{item.name}</span>
+                    </Link>
+                  )}
+                  
+                  {/* Desktop Dropdown */}
+                  {item.hasDropdown && (
+                    <div className="absolute left-0 mt-2 w-64 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                      <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 overflow-hidden">
+                        <div className="py-2">
+                          {item.dropdownItems.map((dropdown) => (
+                            <Link
+                              key={dropdown.name}
+                              to={dropdown.path}
+                              className="flex items-center px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 hover:text-orange-600 transition-all duration-200"
+                            >
+                              {dropdown.icon && <span className="mr-3 text-orange-500">{dropdown.icon}</span>}
+                              <span className="font-medium">{dropdown.name}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </nav>
+
+            {/* Contact Us Button & Mobile Menu */}
+            <div className="flex items-center space-x-4">
+              {/* Contact Us Button - Enhanced */}
+              <div className="hidden md:block">
+                <a href="/contact" className={`group block relative overflow-hidden px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+                  scrolled 
+                    ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40' 
+                    : 'bg-white/10 backdrop-blur-sm text-white border border-white/30 hover:bg-white/20'
+                }`}>
+                  <div className="relative flex items-center space-x-2 z-10">
+                    <Contact size={18} />
+                    <span>Contact Us</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
               </div>
-            ))}
-          </nav>
-          
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-red-500"
-              onClick={toggleMenu}
-            >
-              <span className="sr-only">Open main menu</span>
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+
+              {/* Mobile Menu Button */}
+              <div className="lg:hidden">
+                <button
+                  type="button"
+                  className={`inline-flex items-center justify-center p-2.5 rounded-xl transition-all duration-300 ${
+                    scrolled 
+                      ? 'text-slate-700 hover:bg-slate-100' 
+                      : 'text-white hover:bg-white/10 backdrop-blur-sm'
+                  }`}
+                  onClick={toggleMenu}
+                >
+                  <span className="sr-only">Open main menu</span>
+                  {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="lg:hidden bg-red-700">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <div key={item.name}>
-                {item.hasDropdown ? (
-                  <>
-                    <button
-                      className="w-full flex items-center justify-between px-3 py-2 text-white hover:bg-red-500 rounded-md"
-                      onClick={() => toggleDropdown(item.name)}
-                    >
-                      <div className="flex items-center">
-                        <span className="mr-2">{item.icon}</span>
-                        <span>{item.name}</span>
-                      </div>
-                      <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${activeDropdown === item.name ? 'transform rotate-180' : ''}`} />
-                    </button>
-                    
-                    {activeDropdown === item.name && (
-                      <div className="pl-6 mt-1 space-y-1">
-                        {item.dropdownItems.map((dropdown) => (
-                          <Link
-                            key={dropdown.name}
-                            to={dropdown.path}
-                            className="flex items-center px-3 py-2 text-sm text-red-100 hover:bg-red-600 rounded-md"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {dropdown.icon && <span className="mr-2">{dropdown.icon}</span>}
-                            {dropdown.name}
-                          </Link>
-                        ))}
-                      </div>
+        
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="lg:hidden">
+            <div className="bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-xl">
+              <div className="px-4 pt-4 pb-6 space-y-2">
+                {navItems.map((item) => (
+                  <div key={item.name}>
+                    {item.hasDropdown ? (
+                      <>
+                        <button
+                          className="w-full flex items-center justify-between px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 hover:text-orange-600 rounded-xl transition-all duration-200"
+                          onClick={() => toggleDropdown(item.name)}
+                        >
+                          <div className="flex items-center space-x-3">
+                            <span className="text-orange-500">{item.icon}</span>
+                            <span className="font-medium">{item.name}</span>
+                          </div>
+                          <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
+                            activeDropdown === item.name ? 'rotate-180' : ''
+                          }`} />
+                        </button>
+                        
+                        {activeDropdown === item.name && (
+                          <div className="pl-8 mt-2 space-y-1">
+                            {item.dropdownItems.map((dropdown) => (
+                              <a
+                                key={dropdown.name}
+                                href={dropdown.path}
+                                className="flex items-center px-4 py-2.5 text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all duration-200"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {dropdown.icon && <span className="mr-3 text-orange-400">{dropdown.icon}</span>}
+                                <span>{dropdown.name}</span>
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <a
+                        href={item.path}
+                        className="flex items-center px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 hover:text-orange-600 rounded-xl transition-all duration-200"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <span className="mr-3 text-orange-500">{item.icon}</span>
+                        <span className="font-medium">{item.name}</span>
+                      </a>
                     )}
-                  </>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="flex items-center px-3 py-2 text-white hover:bg-red-500 rounded-md"
+                  </div>
+                ))}
+                
+                {/* Mobile Contact Button */}
+                <div className="pt-4 border-t border-slate-200 mt-4">
+                  <a 
+                    href="/contact"
+                    className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-semibold shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 transition-all duration-300"
                     onClick={() => setIsOpen(false)}
                   >
-                    <span className="mr-2">{item.icon}</span>
-                    <span>{item.name}</span>
-                  </Link>
-                )}
+                    <Contact className="mr-2" size={18} />
+                    <span>Contact Us</span>
+                  </a>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </header>
+    </>
   );
 };
 

@@ -19,26 +19,6 @@ export default function BlogPage() {
 />
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-gray-50">
-      {/* Categories */}
-      {/* <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">Browse by Category</h2>
-        <div className="flex flex-wrap gap-3">
-          <button className="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium hover:bg-indigo-200 transition duration-300">
-            All
-          </button>
-          {categories.map(category => (
-            <button 
-              key={category} 
-              className={`text-white px-4 py-2 rounded-full font-medium transition duration-300 ${getCategoryColor(category)}`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div> */}
-      
-      {/* Blog posts */}
-      {/* <h2 className="text-3xl font-bold mb-8 text-gray-800">Latest Articles</h2> */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogPosts.map(post => (
                     <div key={post.id} className="px-3">
@@ -91,13 +71,6 @@ export default function BlogPage() {
                     </div>
                   ))}
       </div>
-      
-      {/* Load more button */}
-      {/* <div className="mt-12 text-center">
-        <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-indigo-700 transition duration-300 shadow-md hover:shadow-lg">
-          Load More Articles
-        </button>
-      </div> */}
     </div>
     </>
   );

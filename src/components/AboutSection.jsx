@@ -5,9 +5,9 @@ const AboutSection = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="lg:py-16 py-10 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div className="flex flex-col md:flex-row items-cente gap-12 md:gap-16">
           {/* Left side - Image with animated effect */}
           <div className="w-full md:w-1/2 relative">
             <div 
@@ -27,7 +27,7 @@ const AboutSection = () => {
               <div className="absolute -top-6 -left-6 w-20 h-20 bg-red-600 rounded-full opacity-10"></div>
               
               {/* Stats card */}
-              <div className="absolute -right-4 bottom-8 bg-white rounded-lg shadow-xl p-4 w-48">
+              <div className="absolute right-4 bottom-8 bg-white rounded-lg shadow-xl p-4 w-48">
                 <div className="flex items-center mb-2">
                   <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center mr-3">
                     <Clock className="w-5 h-5 text-red-600" />
@@ -40,7 +40,7 @@ const AboutSection = () => {
                 <div className="w-full bg-gray-100 h-1 rounded-full overflow-hidden my-2">
                   <div className="bg-red-600 h-full rounded-full" style={{ width: '85%' }}></div>
                 </div>
-                <p className="text-xs text-gray-500">Trusted by top airports worldwide</p>
+                <p className="text-xs text-gray-500">Trusted by top airports</p>
               </div>
               
               {/* Accent border */}
@@ -52,22 +52,26 @@ const AboutSection = () => {
           <div className="w-full md:w-1/2">
             <div className="max-w-lg">
               {/* Section label */}
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-red-50 text-red-600 font-medium text-sm mb-4">
+              <div className="inline-flex  items-center px-3 py-1 rounded-full bg-red-50 text-red-600 font-medium text-sm mb-4">
                 ABOUT JK CONTRACTOR
               </div>
               
               {/* Heading */}
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                We're Redefining <span className="text-red-600">Airport Services</span> with Innovation & Excellence
+              <h2 className="text-3xl play sm:text-4xl font-bold text-gray-900 mb-6">
+                We're Redefining <span className="text-red-600">Airport Services</span> with Excellence
               </h2>
               
               {/* Description */}
               <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-                Since 2005, JK Contractor has been delivering exceptional services to airports worldwide. Our mission is to enhance airport operations through sustainable practices, cutting-edge technology, and unwavering commitment to safety. We bring expertise, reliability, and innovation to every project.
+               JK Contractor is a professionally managed, multi-certified service provider, established in
+ 2007. We operate with a strong focus on environmental sustainability, safety, operational
+ efficiency, and infrastructure support, especially in the aviation sector. Holding ISO
+ 14001:2015 and BCAS certifications, we adhere to the highest standards in quality, safety,
+ and environmental compliance.
               </p>
               
               {/* Features grid */}
-              <div className="grid grid-cols-2 gap-6 mb-10">
+              {/* <div className="grid grid-cols-2 gap-6 mb-10">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center mr-3">
                     <Shield className="w-5 h-5 text-red-600" />
@@ -110,7 +114,7 @@ const AboutSection = () => {
                     <p className="text-gray-600 text-sm">Round-the-clock operational assistance</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
               
               {/* CTA buttons */}
               <div className="flex flex-wrap gap-4">

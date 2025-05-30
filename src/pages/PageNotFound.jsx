@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const PageNotFound = () => {
   return (
-    <div className="min-h-[92vh] -mt-10 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4">
-      <div className="max-w-lg w-full">
+    <div className="min-h-[100vh] flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4">
+      <div className="max-w-lg mt-20 w-full">
         <div className="text-center">
           {/* Animated Error Icon */}
           <div className="mb-6 inline-flex">
