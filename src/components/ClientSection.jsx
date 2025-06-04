@@ -1,213 +1,142 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Building2, Star, CheckCircle } from 'lucide-react';
+import { Star } from 'lucide-react';
 
-export default function ModernClientsSection() {
+export default function SimpleClientsSection() {
   const clients = [
     { 
       name: "Delhi International Airport Ltd. (DIAL)", 
-      logo: "DIAL",
-      category: "Aviation",
-      project: "Terminal Infrastructure Development",
-      year: "2023"
+      logo: "DIAL"
     },
     { 
       name: "GMR Goa International Airport Ltd. (GGIAL)", 
-      logo: "GGIAL",
-      category: "Aviation",
-      project: "Airport Expansion & Maintenance",
-      year: "2023"
+      logo: "GGIAL"
     },
     { 
       name: "CISF Unit at IGI Airport, New Delhi", 
-      logo: "CISF",
-      category: "Security",
-      project: "Security Infrastructure Setup",
-      year: "2022"
+      logo: "CISF"
     },
     { 
       name: "Municipal Corporation Gurugram", 
-      logo: "MCG",
-      category: "Municipal",
-      project: "Urban Development Projects",
-      year: "2023"
+      logo: "MCG"
     },
     { 
       name: "Public Works Department (PWD)", 
-      logo: "PWD",
-      category: "Government",
-      project: "Public Infrastructure Development",
-      year: "2022"
+      logo: "PWD"
     },
     { 
       name: "New Delhi Municipal Council (NDMC)", 
-      logo: "NDMC",
-      category: "Municipal",
-      project: "City Infrastructure Upgrade",
-      year: "2023"
+      logo: "NDMC"
     },
     { 
       name: "Knight Frank India Pvt. Ltd.", 
-      logo: "KF",
-      category: "Real Estate",
-      project: "Commercial Complex Development",
-      year: "2022"
+      logo: "KF"
     },
     { 
       name: "GMR Telangana (Ertiga Project)", 
-      logo: "GMRT",
-      category: "Infrastructure",
-      project: "Large Scale Construction",
-      year: "2023"
+      logo: "GMRT"
     }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoplay, setIsAutoplay] = useState(true);
-  const itemsToShow = 4;
+  
+  // Responsive items count
+  const getItemsToShow = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth >= 1024) return 4; // lg screens
+      if (window.innerWidth >= 768) return 3;  // md screens
+      if (window.innerWidth >= 640) return 2;  // sm screens
+      return 1; // mobile
+    }
+    return 4;
+  };
 
+  const [itemsToShow, setItemsToShow] = useState(getItemsToShow());
+
+  // Handle window resize
   useEffect(() => {
-    if (!isAutoplay) return;
-    
+    const handleResize = () => {
+      setItemsToShow(getItemsToShow());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Auto slide effect
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => 
         prevIndex >= clients.length - itemsToShow ? 0 : prevIndex + 1
       );
-    }, 4000);
+    }, 3000);
     
     return () => clearInterval(interval);
-  }, [clients.length, isAutoplay]);
-
-  const goToPrev = () => {
-    setIsAutoplay(false);
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? clients.length - itemsToShow : prevIndex - 1
-    );
-  };
-
-  const goToNext = () => {
-    setIsAutoplay(false);
-    setCurrentIndex((prevIndex) => 
-      prevIndex >= clients.length - itemsToShow ? 0 : prevIndex + 1
-    );
-  };
-
-  const getCategoryColor = (category) => {
-    const colors = {
-      Aviation: "bg-blue-100 text-blue-600",
-      Security: "bg-green-100 text-green-600",
-      Municipal: "bg-purple-100 text-purple-600",
-      Government: "bg-orange-100 text-orange-600",
-      "Real Estate": "bg-pink-100 text-pink-600",
-      Infrastructure: "bg-indigo-100 text-indigo-600"
-    };
-    return colors[category] || "bg-gray-100 text-gray-600";
-  };
+  }, [clients.length, itemsToShow]);
 
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-white py-20">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="bg-gradient-to-br from-gray-50 to-white py-16 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center bg-red-50 text-red-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Star className="w-4 h-4 mr-2" />
-            Trusted by Industry Leaders
+            Our Trusted Partners
           </div>
-          <h2 className="text-4xl play  font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Our <span className="text-red-600">Prestigious</span> Clients
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Partnering with leading organizations across aviation, government, and infrastructure sectors to deliver exceptional construction solutions.
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            Trusted by leading organizations across various sectors
           </p>
         </div>
 
-        {/* Clients Grid */}
-        <div className="relative mb-10">
-          <div className="overflow-hidden rounded-2xl">
-            <div 
-              className="flex transition-transform duration-700 ease-in-out" 
-              style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
-            >
-              {clients.map((client, index) => (
-                <div 
-                  key={index} 
-                  className="w-1/4 flex-shrink-0 px-3"
-                >
-                  <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-red-200 h-full overflow-hidden">
-                    
-                    {/* Card Header */}
-                    <div className="bg-gradient-to-r from-red-50 to-orange-50 p-6 relative">
-                      <div className="absolute top-4 right-4">
-                        <CheckCircle className="w-5 h-5 text-green-500" />
-                      </div>
-                      
-                      <div className="flex items-center justify-center mb-4">
-                        <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                          <span className="text-white font-bold text-lg">
-                            {client.logo}
-                          </span>
-                        </div>
-                      </div>
-                      
-                      <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(client.category)}`}>
-                        {client.category}
-                      </div>
-                    </div>
-
-                    {/* Card Content */}
-                    <div className="p-6">
-                      <h3 className="font-bold text-gray-900 mb-3 text-lg leading-tight group-hover:text-red-600 transition-colors duration-300">
-                        {client.name}
-                      </h3>
-                      
-                      <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                        {client.project}
-                      </p>
-                      
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs text-gray-500 bg-gray-50 px-2 py-1 rounded">
-                          {client.year}
-                        </span>
-                        <Building2 className="w-4 h-4 text-red-400" />
-                      </div>
+        {/* Clients Slider */}
+        <div className="relative overflow-hidden">
+          <div 
+            className="flex transition-transform duration-700 ease-in-out" 
+            style={{ 
+              transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
+              width: `${(clients.length / itemsToShow) * 100}%`
+            }}
+          >
+            {clients.map((client, index) => (
+              <div 
+                key={index} 
+                className="flex-shrink-0 px-2 sm:px-3"
+                style={{ width: `${100 / clients.length}%` }}
+              >
+                <div className="group bg-white rounded-xl sm:rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-red-200 p-4 sm:p-6 text-center min-h-[140px] sm:min-h-[160px] flex flex-col justify-center">
+                  
+                  {/* Logo */}
+                  <div className="flex items-center justify-center mb-3 sm:mb-4">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-sm sm:text-lg">
+                        {client.logo}
+                      </span>
                     </div>
                   </div>
+                  
+                  {/* Company Name */}
+                  <h3 className="font-semibold text-gray-900 text-sm sm:text-base leading-tight group-hover:text-red-600 transition-colors duration-300 line-clamp-2">
+                    {client.name}
+                  </h3>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-          
-          {/* Navigation Buttons */}
-          <button 
-            onClick={goToPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 bg-white border border-gray-200 text-gray-600 rounded-full p-3 shadow-lg hover:bg-red-50 hover:border-red-200 hover:text-red-600 transition-all duration-300"
-            aria-label="Previous clients"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          
-          <button 
-            onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 bg-white border border-gray-200 text-gray-600 rounded-full p-3 shadow-lg hover:bg-red-50 hover:border-red-200 hover:text-red-600 transition-all duration-300"
-            aria-label="Next clients"
-          >
-            <ChevronRight size={20} />
-          </button>
         </div>
         
         {/* Pagination Dots */}
-        <div className="flex justify-center items-center space-x-2">
+        <div className="flex justify-center items-center space-x-2 mt-8">
           {Array.from({ length: Math.ceil(clients.length / itemsToShow) }).map((_, index) => (
             <button
               key={index}
-              onClick={() => {
-                setIsAutoplay(false);
-                setCurrentIndex(index * itemsToShow);
-              }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              onClick={() => setCurrentIndex(index * itemsToShow)}
+              className={`h-2 rounded-full transition-all duration-300 ${
                 Math.floor(currentIndex / itemsToShow) === index 
-                  ? 'bg-red-600 w-8' 
-                  : 'bg-gray-300 hover:bg-red-300'
+                  ? 'bg-red-600 w-6 sm:w-8' 
+                  : 'bg-gray-300 hover:bg-red-300 w-2'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

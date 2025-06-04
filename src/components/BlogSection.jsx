@@ -190,14 +190,14 @@ export default function BlogSection() {
                           <Clock className="h-3 w-3 mr-1" />
                           {post.date}
                         </div>
-                        <div className="inline-flex items-center bg-black px-2 py-1 rounded-sm text-xs font-medium text-white">
+                        <div className="inline-flex items-center bg-red-600 px-2 py-1 rounded-sm text-xs font-medium text-white">
                           <Tag className="h-3 w-3 mr-1" />
                           {post.category}
                         </div>
                       </div>
                       
                       {/* Title */}
-                      <h3 className="font-bold text-lg text-black mb-2 line-clamp-2 group-hover:text-red-600 transition-colors duration-300">
+                      <h3 className="font-bold text-lg text-black mb-2 line-clamp-2 group-hover:text-red-600 group-hover:underline transition-colors duration-300">
                         {post.title}
                       </h3>
                       
@@ -209,8 +209,8 @@ export default function BlogSection() {
                       {/* Read More button */}
                       <div className="mt-auto">
                         <Link 
-                          to={`/blog/${post.slug}`}
-                          className="inline-flex items-center text-sm font-medium text-black hover:text-red-600 transition-colors duration-300 group-hover:translate-x-1"
+                          to={`/blog-detail/${post.slug}`}
+                          className="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-700 transition-colors duration-300 group-hover:translate-x-1"
                         >
                           Read More
                           <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />

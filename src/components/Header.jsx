@@ -13,10 +13,11 @@ import {
   Image,
   FileText,
   Phone,
-  Mail
+  Mail,
+  AlignRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import services from '../data/ServiceData';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -63,7 +64,7 @@ const Header = () => {
       hasDropdown: true,
       dropdownItems: [
         { name: 'Company Overview', path: '/about/overview' },
-        { name: 'Leadership Team', path: '/about/leadership' },
+        // { name: 'Leadership Team', path: '/about/leadership' },
         { name: 'Certification', path: '/about/certification' },
       ],
     },
@@ -72,14 +73,11 @@ const Header = () => {
       path: '/services',
       icon: <Briefcase size={18} />,
       hasDropdown: true,
-      dropdownItems: [
-        { name: 'Construction & Civil Work', path: '/services/construction' },
-        { name: 'Project Management', path: '/services/project-management' },
-        { name: 'Architectural Design', path: '/services/design' },
-        { name: 'Interior Solutions', path: '/services/interior' },
-        { name: 'Renovation & Remodeling', path: '/services/renovation' },
-        { name: 'Consulting Services', path: '/services/consulting' },
-      ],
+      dropdownItems: 
+services.map((item)=>{
+ return  { name: item.title, path: `/services/${item.slug}`}
+}),
+
     },
     {
       name: 'Projects',
@@ -105,7 +103,7 @@ const Header = () => {
 
       <header className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled 
-          ? 'bg-zinc-950 backdrop-blur-xl border-b border-white/20 shadow-2xl' 
+          ? 'bg-zinc-950 backdrop-blur-xl shadow-2xl' 
           : 'bg-gradient-to-r'
       }`}>
         <div className="container mx-auto px-4 lg:px-8">
@@ -115,9 +113,9 @@ const Header = () => {
               <a href="/" className="flex items-center space-x-3">
                 <div className={`relative w-12 h-12 rounded-2xl transition-all duration-300 ${
                   scrolled 
-                    ? 'bg-gradient-to-br from-orange-400 to-red-500 shadow-lg shadow-orange-500/25' 
-                    : 'bg-gradient-to-br from-orange-500 to-red-600'
-                } group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-orange-500/40`}>
+                    ? 'bg-gradient-to-br from-red-600 to-red-600 shadow-lg shadow-red-500/25' 
+                    : 'bg-gradient-to-br from-red-600 to-red-600'
+                } group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-red-500/40`}>
                   <div className="absolute inset-0 rounded-2xl bg-white/20 backdrop-blur-sm" />
                   <div className="relative flex items-center justify-center w-full h-full text-white font-bold text-lg">
                     JK
@@ -131,7 +129,7 @@ const Header = () => {
                     JKContractor
                   </div>
                   <div className={`text-xs font-medium transition-colors duration-300 ${
-                    scrolled ? 'text-slate-200' : 'text-orange-200'
+                    scrolled ? 'text-slate-200' : 'text-red-200'
                   }`}>
                     Building Excellence
                   </div>
@@ -173,9 +171,9 @@ const Header = () => {
                             <Link
                               key={dropdown.name}
                               to={dropdown.path}
-                              className="flex items-center px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 hover:text-orange-600 transition-all duration-200"
+                              className="flex items-center px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-red-50 hover:text-red-600 transition-all duration-200"
                             >
-                              {dropdown.icon && <span className="mr-3 text-orange-500">{dropdown.icon}</span>}
+                              {dropdown.icon && <span className="mr-3 text-red-500">{dropdown.icon}</span>}
                               <span className="font-medium">{dropdown.name}</span>
                             </Link>
                           ))}
@@ -191,17 +189,17 @@ const Header = () => {
             <div className="flex items-center space-x-4">
               {/* Contact Us Button - Enhanced */}
               <div className="hidden md:block">
-                <a href="/contact" className={`group block relative overflow-hidden px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+                <Link to="/contact" className={`group block relative overflow-hidden px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
                   scrolled 
-                    ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40' 
+                    ? 'bg-gradient-to-r from-red-500 to-red-500 text-white shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40' 
                     : 'bg-white/10 backdrop-blur-sm text-white border border-white/30 hover:bg-white/20'
                 }`}>
                   <div className="relative flex items-center space-x-2 z-10">
                     <Contact size={18} />
                     <span>Contact Us</span>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </a>
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </Link>
               </div>
 
               {/* Mobile Menu Button */}
@@ -216,7 +214,7 @@ const Header = () => {
                   onClick={toggleMenu}
                 >
                   <span className="sr-only">Open main menu</span>
-                  {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                  {isOpen ? <X className="h-6 w-6" /> : <AlignRight className="h-6 w-6" />}
                 </button>
               </div>
             </div>
@@ -233,11 +231,11 @@ const Header = () => {
                     {item.hasDropdown ? (
                       <>
                         <button
-                          className="w-full flex items-center justify-between px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 hover:text-orange-600 rounded-xl transition-all duration-200"
+                          className="w-full flex items-center justify-between px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-red-50 hover:text-red-600 rounded-xl transition-all duration-200"
                           onClick={() => toggleDropdown(item.name)}
                         >
                           <div className="flex items-center space-x-3">
-                            <span className="text-orange-500">{item.icon}</span>
+                            <span className="text-red-500">{item.icon}</span>
                             <span className="font-medium">{item.name}</span>
                           </div>
                           <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
@@ -251,10 +249,10 @@ const Header = () => {
                               <a
                                 key={dropdown.name}
                                 href={dropdown.path}
-                                className="flex items-center px-4 py-2.5 text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all duration-200"
+                                className="flex items-center px-4 py-2.5 text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200"
                                 onClick={() => setIsOpen(false)}
                               >
-                                {dropdown.icon && <span className="mr-3 text-orange-400">{dropdown.icon}</span>}
+                                {dropdown.icon && <span className="mr-3 text-red-400">{dropdown.icon}</span>}
                                 <span>{dropdown.name}</span>
                               </a>
                             ))}
@@ -264,10 +262,10 @@ const Header = () => {
                     ) : (
                       <a
                         href={item.path}
-                        className="flex items-center px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 hover:text-orange-600 rounded-xl transition-all duration-200"
+                        className="flex items-center px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-red-50 hover:text-red-600 rounded-xl transition-all duration-200"
                         onClick={() => setIsOpen(false)}
                       >
-                        <span className="mr-3 text-orange-500">{item.icon}</span>
+                        <span className="mr-3 text-red-500">{item.icon}</span>
                         <span className="font-medium">{item.name}</span>
                       </a>
                     )}
@@ -276,14 +274,14 @@ const Header = () => {
                 
                 {/* Mobile Contact Button */}
                 <div className="pt-4 border-t border-slate-200 mt-4">
-                  <a 
-                    href="/contact"
-                    className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-semibold shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 transition-all duration-300"
+                  <Link 
+                    to="/contact"
+                    className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-red-500 to-red-500 text-white rounded-xl font-semibold shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300"
                     onClick={() => setIsOpen(false)}
                   >
                     <Contact className="mr-2" size={18} />
                     <span>Contact Us</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

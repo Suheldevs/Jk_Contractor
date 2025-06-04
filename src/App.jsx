@@ -12,12 +12,16 @@ import Footer from './components/Footer'
 import CompanyOverview from './pages/about/CompanyOverview'
 import CertificatesPage from './pages/about/CertificatesPage'
 import VehiclesEquipmentPage from './pages/VehiclesEquipmentPage'
+import Gallery from './pages/Gallery'
+import ServiceDetail from './pages/ServiceDetailPage'
+import ScrollToTop from './components/ScrollToTop'
 
 
 export default function App() {
   return (
     <>
     <Header/>
+    <ScrollToTop/>
     <Routes>
       <Route path='*' element={<PageNotFound/>}/>
       <Route path='/' element={<Home/>}/>
@@ -25,9 +29,11 @@ export default function App() {
       <Route path='/about/certification' element={<CertificatesPage/>}/>
       <Route path='/contact' element={<ContactUsPage/>}/>
       <Route path='/blog' element={<BlogPage/>}/>
-      <Route path='/blog/:slug' element={<BlogDetail/>}/>
+      <Route path='/blog-detail/:slug' element={<BlogDetail/>}/>
       <Route path='/project' element={<ProjectPage/>}/>
       <Route path='/vehicles' element={<VehiclesEquipmentPage/>}/>
+      <Route path='/gallery' element={<Gallery/>}/>
+      <Route path='/services/:slug' element={<ServiceDetail/>}/>
     </Routes>
     <Footer/>
     </>

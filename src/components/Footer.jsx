@@ -30,7 +30,7 @@ export default function Footer() {
                 <div className="flex-shrink-0 group">
                   <a href="/" className="flex items-center space-x-3">
                     <div
-                      className={`relative w-12 h-12 rounded-2xl transition-all duration-300 bg-gradient-to-br from-orange-400 to-red-500 shadow-lg shadow-orange-500/25 group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-orange-500/40`}
+                      className={`relative w-12 h-12 rounded-2xl transition-all duration-300 bg-gradient-to-br from-red-600 to-red-600 shadow-lg shadow-orange-500/25 group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-orange-500/40`}
                     >
                       <div className="absolute inset-0 rounded-2xl bg-white/20 backdrop-blur-sm" />
                       <div className="relative flex items-center justify-center w-full h-full text-white font-bold text-lg">

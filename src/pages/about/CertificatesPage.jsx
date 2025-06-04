@@ -16,6 +16,7 @@ import {
   Eye,
   Download
 } from 'lucide-react';
+import Breadcrumb from '../../components/Breadcrumb';
 
 const CertificatesPage = () => {
   const [selectedCert, setSelectedCert] = useState(null);
@@ -117,22 +118,14 @@ const CertificatesPage = () => {
   ];
 
   return (
+    <>
+    <Breadcrumb
+        title="Contact Us"
+        items={[{name:'Certifications & Approvals', path:'about/certification'}]}
+        // bgImage="/api/placeholder/1920/600"
+      />
     <div className="min-h-screen bg-white">
-      {/* Header Section */}
-      <div className="bg-gradient-to-r from-red-600 to-red-700 text-white">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Award className="w-12 h-12 text-red-200" />
-              <h1 className="text-5xl font-bold">Certifications & Approvals</h1>
-            </div>
-            <p className="text-xl text-red-100 max-w-3xl mx-auto leading-relaxed">
-              Our commitment to excellence is validated through multiple certifications, 
-              approvals, and compliance standards ensuring quality, safety, and reliability.
-            </p>
-          </div>
-        </div>
-      </div>
+     
 
       {/* Stats Section */}
       <div className="bg-gray-50 border-b border-gray-200">
@@ -161,7 +154,7 @@ const CertificatesPage = () => {
       {/* Certificates Grid */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Certifications</h2>
+          <h2 className="text-4xl font-bold play text-gray-900 mb-4">Our Certifications</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Each certification represents our unwavering commitment to maintaining the highest standards 
             in quality, safety, environmental responsibility, and operational excellence.
@@ -210,7 +203,7 @@ const CertificatesPage = () => {
         {/* Policies Section */}
         <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Core Policies</h2>
+            <h2 className="text-3xl font-bold play text-gray-900 mb-4">Our Core Policies</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Guiding principles that shape our operations and ensure consistent delivery of excellence across all services.
             </p>
@@ -249,7 +242,7 @@ const CertificatesPage = () => {
 
       {/* Certificate Detail Modal */}
       {selectedCert && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <div className="flex items-start justify-between mb-6">
@@ -300,8 +293,8 @@ const CertificatesPage = () => {
               
               <div className="flex gap-3">
                 <button className="flex-1 bg-red-600 text-white px-6 py-3 rounded-xl hover:bg-red-700 transition-colors flex items-center justify-center gap-2">
-                  <Download className="w-5 h-5" />
-                  Download Certificate
+                  <Eye className="w-5 h-5" />
+                 Inquire For Certificate Detail
                 </button>
                 <button 
                   onClick={() => setSelectedCert(null)}
@@ -315,6 +308,7 @@ const CertificatesPage = () => {
         </div>
       )}
     </div>
+     </>
   );
 };
 

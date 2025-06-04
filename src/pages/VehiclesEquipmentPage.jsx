@@ -17,6 +17,7 @@ import {
   Filter,
   Search
 } from 'lucide-react';
+import Breadcrumb from '../components/Breadcrumb';
 
 const VehiclesEquipmentPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -304,22 +305,14 @@ const VehiclesEquipmentPage = () => {
   ];
 
   return (
+    <>
+     <Breadcrumb
+        title="Vehicles & Equipment"
+        items={[{name:'Vehicles & Equipment', path:'vahical'}]}
+        // bgImage="/api/placeholder/1920/600"
+      />
     <div className="min-h-screen bg-white">
-      {/* Header Section */}
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Truck className="w-12 h-12 text-gray-300" />
-              <h1 className="text-5xl font-bold">Vehicles & Equipment</h1>
-            </div>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Our meticulously curated fleet of vehicles and operational equipment ensures efficiency, 
-              durability, and operational readiness across all service domains.
-            </p>
-          </div>
-        </div>
-      </div>
+    
 
       {/* Stats Section */}
       <div className="bg-gray-50 border-b border-gray-200">
@@ -457,7 +450,7 @@ const VehiclesEquipmentPage = () => {
 
       {/* Vehicle Detail Modal */}
       {selectedVehicle && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div className="fixed inset-0 bg-black/50  flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             <div className="relative">
               <img 
@@ -534,6 +527,7 @@ const VehiclesEquipmentPage = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

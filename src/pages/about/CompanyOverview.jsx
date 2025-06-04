@@ -16,6 +16,7 @@ import {
   Truck,
   Coffee
 } from 'lucide-react';
+import Breadcrumb from '../../components/Breadcrumb';
 
 const CompanyOverview = () => {
   const highlights = [
@@ -43,7 +44,7 @@ const CompanyOverview = () => {
 
   const services = [
     { icon: Recycle, name: "Waste Management", color: "text-green-600" },
-    { icon: Building2, name: "Housekeeping & Facility Management", color: "text-blue-600" },
+    { icon: Building2, name: "Housekeeping & Facility Management", color: "text-red-600" },
     { icon: Truck, name: "Sweeping Machines & Cleaning", color: "text-purple-600" },
     { icon: Users, name: "Manpower Solutions", color: "text-orange-600" },
     { icon: TreePine, name: "Horticulture Services", color: "text-emerald-600" },
@@ -51,37 +52,43 @@ const CompanyOverview = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <>
+     <Breadcrumb
+        title="About Us"
+        items={[
+    { name: "about", path: "/about" },]}
+      />
+    <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900">
+      {/* <div className="relative overflow-hidden bg-gradient-to-r from-red-900 via-red-900 to-purple-900">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-6 py-16">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-white mb-4">
               JK CONTRACTOR
             </h1>
-            <div className="flex items-center justify-center gap-2 text-blue-200 mb-6">
+            <div className="flex items-center justify-center gap-2 text-red-200 mb-6">
               <MapPin className="w-5 h-5" />
               <p className="text-lg">306, Shahbad Mohd. Pur, Near IGI Airport, New Delhi</p>
             </div>
-            <div className="flex items-center justify-center gap-2 text-blue-200 mb-8">
+            <div className="flex items-center justify-center gap-2 text-red-200 mb-8">
               <Mail className="w-5 h-5" />
               <p className="text-lg">jkcontractor786@gmail.com</p>
             </div>
-            <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-red-100 max-w-4xl mx-auto leading-relaxed">
               Professionally managed, multi-certified service provider specializing in 
               environmental sustainability, safety, and operational efficiency in the aviation sector
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Key Highlights */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {highlights.map((item, index) => (
             <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl mb-4 mx-auto">
+              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl mb-4 mx-auto">
                 <item.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-800 text-center mb-2">{item.title}</h3>
@@ -93,7 +100,7 @@ const CompanyOverview = () => {
         {/* About Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">About the Company</h2>
+            <h2 className="text-4xl font-bold play text-gray-800 mb-6">About the Company</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
                 JK Contractor is a professionally managed, multi-certified service provider, established in 2007. 
@@ -117,38 +124,38 @@ const CompanyOverview = () => {
                 <CheckCircle className="w-5 h-5" />
                 <span className="font-semibold">ISO 14001:2015 Certified</span>
               </div>
-              <div className="flex items-center gap-2 text-blue-600">
+              <div className="flex items-center gap-2 text-red-600">
                 <Shield className="w-5 h-5" />
                 <span className="font-semibold">BCAS Certified</span>
               </div>
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white">
+          <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-3xl p-8 text-white">
             <div className="flex items-center gap-3 mb-6">
               <Star className="w-8 h-8 text-yellow-400" />
               <h3 className="text-2xl font-bold">Our Specialization</h3>
             </div>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Plane className="w-6 h-6 text-blue-300 mt-1" />
+                <Plane className="w-6 h-6 text-red-300 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Airport Operations</h4>
-                  <p className="text-blue-100 text-sm">Advanced runway sweeping, FOD elimination, and airfield maintenance</p>
+                  <p className="text-red-100 text-sm">Advanced runway sweeping, FOD elimination, and airfield maintenance</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Recycle className="w-6 h-6 text-green-300 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Waste Management</h4>
-                  <p className="text-blue-100 text-sm">India's first airport-based MRF with eco-friendly solutions</p>
+                  <p className="text-red-100 text-sm">India's first airport-based MRF with eco-friendly solutions</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Coffee className="w-6 h-6 text-amber-300 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Food & Beverage</h4>
-                  <p className="text-blue-100 text-sm">Second Cup coffee franchise operations at airports</p>
+                  <p className="text-red-100 text-sm">Second Cup coffee franchise operations at airports</p>
                 </div>
               </div>
             </div>
@@ -157,7 +164,7 @@ const CompanyOverview = () => {
 
         {/* Services Grid */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">Our Core Services</h2>
+          <h2 className="text-4xl font-bold play text-gray-800 text-center mb-12">Our Core Services</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group">
@@ -174,7 +181,7 @@ const CompanyOverview = () => {
 
         {/* Key Achievements */}
         <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-3xl p-8 border border-emerald-100">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Key Achievements</h2>
+          <h2 className="text-3xl font-bold play text-gray-800 text-center mb-8">Key Achievements</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -186,7 +193,7 @@ const CompanyOverview = () => {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
                 <Truck className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -198,6 +205,7 @@ const CompanyOverview = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

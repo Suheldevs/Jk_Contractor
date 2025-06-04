@@ -84,20 +84,17 @@ const ServicesSection = () => {
               {/* Content */}
               <div className=" p-4">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <p className="text-gray-600 mb-6 line-clamp-2">{service.description}</p>
                 
                 {/* Read More Link */}
-                <a 
-                  href={`/services/${service.id}`} 
+                <Link  
+                  to={`/services/${service.slug}`} 
                   className="inline-flex items-center font-medium text-red-600 hover:text-red-700 transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    console.log(`Navigating to service: ${service.title}`);
-                  }}
+                 
                 >
                   Read More
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
                 
                 {/* Decorative corner element */}
                 <div className="absolute bottom-0 right-0 w-16 h-16 bg-gray-50 transform rotate-45 translate-x-8 translate-y-8 opacity-50"></div>

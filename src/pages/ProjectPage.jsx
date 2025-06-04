@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, MapPin, Calendar, ArrowRight } from 'lucide-react';
 import projects from '../data/ProjectData';
+import Breadcrumb from '../components/Breadcrumb';
 const ProjectPage = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,19 +24,16 @@ const ProjectPage = () => {
   };
 
   return (
+    <>
+    <Breadcrumb
+           title="Featured Projects"
+           items={[  
+    { name: "OUR PROJECTS", path: "/project" },]}
+           
+         />
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center justify-center px-4 py-1.5 bg-red-50 rounded-full mb-4">
-            <span className="text-red-600 font-medium text-sm">OUR PROJECTS</span>
-          </div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Featured <span className="text-red-600">Projects</span></h2>
-          <p className="text-gray-600 text-lg">
-            Explore our portfolio of successful airport and facility projects that showcase our 
-            expertise, innovation, and commitment to excellence.
-          </p>
-        </div>
+    
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -77,21 +75,7 @@ const ProjectPage = () => {
             </div>
           ))}
         </div>
-        
-        {/* "View All Projects" Button */}
-        <div className="mt-12 text-center">
-          <a 
-            href="/projects" 
-            className="inline-flex items-center font-medium text-red-600 hover:text-red-700 transition-colors"
-            onClick={(e) => {
-              e.preventDefault();
-              console.log("Navigating to all projects page");
-            }}
-          >
-            View All Projects
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
-        </div>
+      
       </div>
 
       {/* Full Screen Modal */}
@@ -197,6 +181,7 @@ const ProjectPage = () => {
         </div>
       )}
     </section>
+     </>
   );
 };
 
