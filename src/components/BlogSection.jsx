@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, Tag, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import blogPosts from '../Data/BlogData';
+import blogPosts from '../data/BlogData';
 // Mock Link component since react-router-dom isn't available
 const Link = ({ to, children, className, ...props }) => (
   <a href={to} className={className} {...props}>

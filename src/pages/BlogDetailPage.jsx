@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Clock, ChevronLeft, ArrowRight } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
-import blogData from '../Data/BlogData'
+import blogData from '../data/BlogData'
 import Breadcrumb from '../components/Breadcrumb';
 
 export default function BlogDetail() {

@@ -2,12 +2,9 @@ import { useState } from "react";
 import { Clock, Tag, ArrowRight, Heart, MessageSquare, Share2, Bookmark } from "lucide-react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
-import blogPosts from '../Data/BlogData'
+import blogPosts from '../data/BlogData'
 export default function BlogPage() {
-  const [hoveredId, setHoveredId] = useState(null);
-
-
-  
+  const [hoveredId, setHoveredId] = useState(null); 
   return (
     <>
     <Breadcrumb 
