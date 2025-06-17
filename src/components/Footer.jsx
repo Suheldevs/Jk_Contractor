@@ -11,12 +11,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 
-// Mock Link component since react-router-dom isn't available
-const Link = ({ to, children, className, ...props }) => (
-  <a href={to} className={className} {...props}>
-    {children}
-  </a>
-);
+import services from "../data/ServiceData";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -28,7 +24,7 @@ export default function Footer() {
             <div className="lg:col-span-1">
               <div className="mb-5">
                 <div className="flex-shrink-0 group">
-                  <a href="/" className="flex items-center space-x-3">
+                  <Link to="/" className="flex items-center space-x-3">
                     <div
                       className={`relative w-12 h-12 rounded-2xl transition-all duration-300 bg-gradient-to-br from-red-600 to-red-600 shadow-lg shadow-orange-500/25 group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-orange-500/40`}
                     >
@@ -50,7 +46,7 @@ export default function Footer() {
                         Building Excellence
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </div>
                 {/* <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mb-6"></div> */}
                 <p className="text-gray-300 leading-relaxed text-sm mt-4">
@@ -94,25 +90,15 @@ export default function Footer() {
                 Our Services
               </h3>
               <ul className="space-y-3">
-                {[
-                  "Airport Management Solutions",
-                  "Solid Waste Management",
-                  "Environmental Services",
-                  "Infrastructure Development",
-                  "Municipal Services",
-                  "Project Management",
-                  "Landscape & Horticulture",
-                ].map((service, index) => (
+               {services.slice(0,6)?.map((service, index) => (
                   <li key={index} className="group">
                     <Link
-                      to={`/services/${service
-                        .toLowerCase()
-                        .replace(/ /g, "-")}`}
+                      to={`/services/${service.slug}`}
                       className="flex items-center text-gray-300 hover:text-white transition-all duration-300 group-hover:translate-x-2"
                     >
                       <div className="w-1 h-1 bg-white rounded-full mr-3 group-hover:w-2 group-hover:h-2 transition-all duration-300"></div>
                       <span className="text-sm group-hover:text-red-400">
-                        {service}
+                        {service.title}
                       </span>
                     </Link>
                   </li>
@@ -128,12 +114,14 @@ export default function Footer() {
               <ul className="space-y-3">
                 {[
                   { name: "About Us", path: "/about" },
+                  // { name: "Our Team", path: "/team" },
+                  // { name: "Careers", path: "/careers" },
+                  { name: "Projects", path: "/project" },
+                  { name: "Equipment & Machinary", path: "/vehicles" },
+                  { name: "Gallery", path: "/gallery" },
+                  { name: "Blogs", path: "/blog" },
                   { name: "Our Team", path: "/team" },
-                  { name: "Careers", path: "/careers" },
-                  { name: "Projects", path: "/projects" },
-                  { name: "Testimonials", path: "/testimonials" },
-                  { name: "FAQ", path: "/faq" },
-                  { name: "Privacy Policy", path: "/privacy" },
+               
                 ].map((link, index) => (
                   <li key={index} className="group">
                     <Link

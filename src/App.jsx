@@ -15,6 +15,7 @@ import VehiclesEquipmentPage from './pages/VehiclesEquipmentPage'
 import Gallery from './pages/Gallery'
 import ServiceDetail from './pages/ServiceDetailPage'
 import ScrollToTop from './components/ScrollToTop'
+import TeamPage from './pages/TeamPage'
 
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
       <Route path='/vehicles' element={<VehiclesEquipmentPage/>}/>
       <Route path='/gallery' element={<Gallery/>}/>
       <Route path='/services/:slug' element={<ServiceDetail/>}/>
+      <Route path='/team' element={<TeamPage/>}/>
     </Routes>
     <Footer/>
     </>

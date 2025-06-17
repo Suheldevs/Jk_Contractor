@@ -104,7 +104,7 @@ const ServicesSection = () => {
         </div>
         
         {/* View All Button */}
-        <div className="mt-10 text-center">
+        {/* <div className="mt-10 text-center">
           <Link 
             to="/services" 
             className="inline-flex items-center justify-center bg-red-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-red-700 transition-colors shadow-lg shadow-red-200/40 group"
@@ -113,9 +113,8 @@ const ServicesSection = () => {
             <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Link>
           
-          {/* Background Pattern */}
           <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-24 h-24 bg-red-50 rounded-full blur-3xl opacity-70"></div>
-        </div>
+        </div> */}
         
         {/* Services Overview */}
         

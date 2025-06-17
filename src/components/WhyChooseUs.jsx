@@ -1,5 +1,5 @@
 import { Shield, Users, Clock, Award, CheckCircle, Star } from 'lucide-react';
-
+import whychooseus from '../assets/about/whychooseus.png'
 const WhyChooseUs = () => {
   const features = [
     {
@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className=" bg-gray-50">
+    <section className="py-6 ">
       <div className="container mx-auto px-4">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid lg:grid-cols-2">
@@ -74,13 +74,13 @@ const WhyChooseUs = () => {
             {/* Right Image Section */}
             <div className="relative">
               <img 
-                src="https://picsum.photos/800/600?random=2" 
+                src={whychooseus}
                 alt="JK Construction Team at Work" 
-                className="w-full h-full object-cover min-h-[500px]"
+                className="w-full h-full object-cove min-h-[500px]"
               />
               
               {/* Overlay with Stats */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent">
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="grid grid-cols-2 gap-4">
                     {stats.map((stat, index) => (
@@ -98,13 +98,13 @@ const WhyChooseUs = () => {
               </div>
 
               {/* Floating Badge */}
-              <div className="absolute top-6 right-6 bg-white rounded-full p-4 shadow-lg">
+              {/* <div className="absolute top-6 right-6 bg-white rounded-full p-4 shadow-lg">
                 <div className="flex items-center space-x-2">
                   <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
                   <div className="text-sm font-semibold text-gray-900">4.9/5</div>
                 </div>
                 <div className="text-xs text-gray-500 text-center">Rating</div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

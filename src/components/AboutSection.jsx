@@ -1,25 +1,25 @@
 import { useState } from 'react';
 import { ArrowRight, Shield, Leaf, Award, Clock } from 'lucide-react';
-
+import image from '../assets/about/about.png'
 const AboutSection = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <section className="lg:py-16 py-10 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-cente gap-12 md:gap-16">
+        <div className="flex flex-col md:flex-row items-cente gap-12 ">
           {/* Left side - Image with animated effect */}
           <div className="w-full md:w-1/2 relative">
             <div 
-              className="relative h-80 sm:h-96 md:h-[30rem] rounded-xl overflow-hidden"
+              className="relative h-70 sm:h-96 md:h-[28rem] rounded-xl overflow-hidden"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
               {/* Main image */}
               <img 
-                src="https://picsum.photos/800/1000?random=1" 
+                src={image} 
                 alt="JK Contractor airport operations" 
-                className={`w-full h-full object-cover transition-all duration-700 ease-in-out ${isHovered ? 'scale-105' : 'scale-100'}`}
+                className={`w-full h-full object transition-all duration-700 ease-in-out ${isHovered ? 'scale-105' : 'scale-100'}`}
               />
               
               {/* Decorative elements */}
@@ -27,20 +27,14 @@ const AboutSection = () => {
               <div className="absolute -top-6 -left-6 w-20 h-20 bg-red-600 rounded-full opacity-10"></div>
               
               {/* Stats card */}
-              <div className="absolute right-4 bottom-8 bg-white rounded-lg shadow-xl p-4 w-48">
-                <div className="flex items-center mb-2">
-                  <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center mr-3">
-                    <Clock className="w-5 h-5 text-red-600" />
-                  </div>
+              <div className="absolute bottom-2 rounded-lg shadow-xl p-4 w-fit">
+                <div className="flex items-center  mb-2">
                   <div>
-                    <p className="text-gray-500 text-sm">Experience</p>
-                    <p className="font-bold text-gray-800">Since 2005</p>
+                    <p className=' text-gray-100'>* Inauguration ceremony of road sweeping work under PWD, New Delhi by Hon’ble CM 
+ of Delhi Sh. Arvind Kejriwal</p>
                   </div>
                 </div>
-                <div className="w-full bg-gray-100 h-1 rounded-full overflow-hidden my-2">
-                  <div className="bg-red-600 h-full rounded-full" style={{ width: '85%' }}></div>
-                </div>
-                <p className="text-xs text-gray-500">Trusted by top airports</p>
+               
               </div>
               
               {/* Accent border */}

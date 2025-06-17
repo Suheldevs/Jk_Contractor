@@ -5,12 +5,17 @@
     Sprout, 
     Droplet, 
     Coffee, 
-    Building2, 
     Settings, 
-    ArrowRight, 
-    ChevronRight
   } from 'lucide-react';
-const services = [
+
+  import waste from '../assets/service/WasteManagement.webp'
+ import house from '../assets/service/Housekeeping-Facilities.webp'
+ import transport from '../assets/service/Transport-Logistics.webp'
+ import sweeping from '../assets/service/sweeping.webp'
+ import food from '../assets/service/Food.webp'
+ import Horticulture from '../assets/service/Horticulture.webp'
+
+  const services = [
   {
     id: 1,
     title: 'Waste Management',
@@ -18,12 +23,12 @@ const services = [
     description:
       'We specialize in innovative waste management solutions, offering efficient collection, segregation, and eco-friendly disposal methods. Our commitment to sustainability ensures minimal environmental impact while maintaining regulatory compliance. We operate India’s first airport-based MRF to enhance recycling and minimize landfill dependency.',
     icon: <Trash2 size={24} />,
-    image: 'https://picsum.photos/600/400?random=1',
-    images: [
-      'https://picsum.photos/600/400?random=2',
-      'https://picsum.photos/600/400?random=3',
-      'https://picsum.photos/600/400?random=4'
-    ],
+    image: waste,
+    // images: [
+    //   'https://picsum.photos/600/400?random=2',
+    //   'https://picsum.photos/600/400?random=3',
+    //   'https://picsum.photos/600/400?random=4'
+    // ],
     category: ['airport', 'facility'],
     color: 'bg-emerald-500',
     features: [
@@ -61,12 +66,12 @@ const services = [
     description:
       'Our professional housekeeping and facility management services help maintain hygienic, organized, and welcoming environments for passengers and employees, contributing to enhanced customer experiences.',
     icon: <Home size={24} />,
-    image: 'https://picsum.photos/600/400?random=2',
-    images: [
-      'https://picsum.photos/600/400?random=21',
-      'https://picsum.photos/600/400?random=22',
-      'https://picsum.photos/600/400?random=23'
-    ],
+    image:house,
+    // images: [
+    //   'https://picsum.photos/600/400?random=21',
+    //   'https://picsum.photos/600/400?random=22',
+    //   'https://picsum.photos/600/400?random=23'
+    // ],
     category: ['facility'],
     color: 'bg-blue-500',
     features: [
@@ -103,11 +108,11 @@ const services = [
     description:
       'We supply and maintain essential vehicles and equipment, including cleaning machines, transport vehicles, and operational machinery, to support seamless airport and facility management. Provision of BDDS (Bomb Detection and Disposal Squad) and DG Squad support vehicles for enhanced airport security and safety.',
     icon: <Truck size={24} />,
-    image: 'https://picsum.photos/600/400?random=3',
-    images: [
-      'https://picsum.photos/600/400?random=31',
-      'https://picsum.photos/600/400?random=32'
-    ],
+    image: transport,
+    // images: [
+    //   'https://picsum.photos/600/400?random=31',
+    //   'https://picsum.photos/600/400?random=32'
+    // ],
     category: ['airport', 'specialized'],
     color: 'bg-amber-500',
     features: [
@@ -143,7 +148,7 @@ const services = [
     description:
       'We provide high-performance sweeping machines and advanced cleaning equipment, ensuring spotless and well-maintained spaces in airports and commercial areas. We use state-of-the-art mechanized sweepers to keep airside and landside areas clean and foreign-object debris (FOD) free.',
     icon: <Droplet size={24} />,
-    image: 'https://picsum.photos/600/400?random=4',
+    image: sweeping,
     images: [
       'https://picsum.photos/600/400?random=41',
       'https://picsum.photos/600/400?random=42'
@@ -183,11 +188,11 @@ const services = [
     description:
       'We manage a network of well-maintained canteens and food outlets across airport locations, offering passengers and employees a variety of high-quality, nutritious, and hygienic meal options. From quick bites to full-course meals, our offerings meet the highest food safety standards, ensuring convenience and satisfaction.',
     icon: <Coffee size={24} />,
-    image: 'https://picsum.photos/600/400?random=6',
-    images: [
-      'https://picsum.photos/600/400?random=61',
-      'https://picsum.photos/600/400?random=62'
-    ],
+    image: food,
+    // images: [
+    //   'https://picsum.photos/600/400?random=61',
+    //   'https://picsum.photos/600/400?random=62'
+    // ],
     category: ['facility'],
     color: 'bg-red-500',
     features: [
@@ -225,11 +230,11 @@ const services = [
     description:
       'We offer landscape design, green space management, and civil infrastructure services for sustainable airport environments. This includes plantation of trees, irrigation systems, and ongoing lawn maintenance to enhance both ecological value and visual appeal.',
     icon: <Sprout size={24} />,
-    image: 'https://picsum.photos/600/400?random=5',
-    images: [
-      'https://picsum.photos/600/400?random=51',
-      'https://picsum.photos/600/400?random=52'
-    ],
+    image: Horticulture,
+    // images: [
+    //   'https://picsum.photos/600/400?random=51',
+    //   'https://picsum.photos/600/400?random=52'
+    // ],
     category: ['specialized'],
     color: 'bg-green-500',
     features: [
