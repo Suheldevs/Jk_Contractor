@@ -101,7 +101,7 @@ services.map((item)=>{
   return (
     <>
 
-      <header className={`fixed w-full z-50 transition-all duration-500 ${
+      <header className={`fixed w-full border-b border-slate-400/10 z-50 transition-all duration-500 ${
         scrolled 
           ? 'bg-zinc-950 backdrop-blur-xl shadow-2xl' 
           : 'bg-gradient-to-r'
@@ -122,8 +122,8 @@ services.map((item)=>{
                   </div>
                   <div className="absolute inset-0 rounded-2xl border border-white/30" />
                 </div>
-                <div className="hidden sm:block">
-                  <div className={`font-bold text-xl transition-colors duration-300 ${
+                <div className="block">
+                  <div className={`font-bold lg:text-xl  transition-colors duration-300 ${
                     scrolled ? 'text-slate-100' : 'text-white'
                   }`}>
                     JKContractor
@@ -208,13 +208,13 @@ services.map((item)=>{
                   type="button"
                   className={`inline-flex items-center justify-center p-2.5 rounded-xl transition-all duration-300 ${
                     scrolled 
-                      ? 'text-slate-700 hover:bg-slate-100' 
+                      ? 'text-slate-300 hover:bg-slate-100' 
                       : 'text-white hover:bg-white/10 backdrop-blur-sm'
                   }`}
                   onClick={toggleMenu}
                 >
                   <span className="sr-only">Open main menu</span>
-                  {isOpen ? <X className="h-6 w-6" /> : <AlignRight className="h-6 w-6" />}
+                  {isOpen ? <X className="h-7 w-7" /> : <AlignRight className="h-7 w-7" />}
                 </button>
               </div>
             </div>
@@ -246,28 +246,28 @@ services.map((item)=>{
                         {activeDropdown === item.name && (
                           <div className="pl-8 mt-2 space-y-1">
                             {item.dropdownItems.map((dropdown) => (
-                              <a
+                              <Link
                                 key={dropdown.name}
-                                href={dropdown.path}
+                                 to={dropdown.path}
                                 className="flex items-center px-4 py-2.5 text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200"
                                 onClick={() => setIsOpen(false)}
                               >
                                 {dropdown.icon && <span className="mr-3 text-red-400">{dropdown.icon}</span>}
                                 <span>{dropdown.name}</span>
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         )}
                       </>
                     ) : (
-                      <a
-                        href={item.path}
+                      <Link
+                        to={item.path}
                         className="flex items-center px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-red-50 hover:text-red-600 rounded-xl transition-all duration-200"
                         onClick={() => setIsOpen(false)}
                       >
                         <span className="mr-3 text-red-500">{item.icon}</span>
                         <span className="font-medium">{item.name}</span>
-                      </a>
+                      </Link>
                     )}
                   </div>
                 ))}

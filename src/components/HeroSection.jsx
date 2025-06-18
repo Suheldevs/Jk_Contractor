@@ -47,7 +47,7 @@
 //                 <span className="text-red-600 font-bold text-3xl">JK</span>
 //               </div>
 //               <div className="absolute -right-2 -bottom-2 bg-red-600 text-white text-xs px-2 py-1 rounded-full">
-//                 SINCE 2007
+//                 SINCE 2005
 //               </div>
 //             </div>
 //           </div> */}
@@ -152,7 +152,8 @@ const HeroSection = () => {
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
         <video
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          // src="https://www.w3schools.com/html/mov_bbb.mp4"
+          src="https://cdn.pixabay.com/video/2017/07/16/10690-226624853_large.mp4"
           className="w-full h-full object-cover"
           autoPlay
           loop
@@ -163,7 +164,7 @@ const HeroSection = () => {
         </video>
         
         {/* Enhanced overlay with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-red-900/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/10 to-black/20"></div>
         
         {/* Animated particles overlay */}
         <div className="absolute inset-0 opacity-30">
@@ -174,7 +175,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative mt-20 h-full flex flex-col items-center justify-center text-white px-4 sm:px-6 lg:px-8">
+      <div className="relative mt-8 lg:mt-14 h-full flex flex-col items-center justify-center text-white px-4 sm:px-6 lg:px-8">
         <div className={`max-w-5xl mx-auto text-center transition-all duration-1000 transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           
           {/* Welcome Badge */}
@@ -200,20 +201,20 @@ const HeroSection = () => {
           
           {/* Tagline with typing effect */}
           <div className=" text-xl max-w-3xl mx-auto leading-relaxed">
-            <p className="text-gray-200 font-light">
+            <p className="text-gray-50 font-light">
               Safe, Sustainable, and Smart Solutions for Modern Airports
             </p>
-            <div className="flex items-center justify-center gap-6 mt-4 text-sm text-gray-300">
+            <div className="flex items-center justify-center gap-6 mt-4 lg:text-sm text-xs text-gray-100">
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-red-400" />
+                <Shield className="w-4 h-4 text-red-500" />
                 <span>BCAS Certified</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-red-400" />
+                <Award className="w-4 h-4 text-red-500" />
                 <span>ISO 14001:2015</span>
               </div>
               <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-red-400" />
+                <Zap className="w-4 h-4 text-red-500" />
                 <span>Since 2007</span>
               </div>
             </div>

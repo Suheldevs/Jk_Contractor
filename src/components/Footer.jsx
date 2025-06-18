@@ -52,7 +52,7 @@ export default function Footer() {
                 <p className="text-gray-300 leading-relaxed text-sm mt-4">
                   Leading the future of infrastructure with innovative solutions
                   and sustainable practices. Excellence in every project since
-                  2007.
+                  2005.
                 </p>
               </div>
 

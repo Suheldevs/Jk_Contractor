@@ -272,11 +272,11 @@
     description:
       'We provide a variety of customized support services tailored to meet unique operational requirements. From staffing and specialized vehicles to barricading, demolition, and road safety solutions — we cover the end-to-end needs of complex infrastructure and airport environments.',
     icon: <Settings size={24} />,
-    image: '/api/placeholder/600/400',
-    images: [
-      '/api/placeholder/600/400?1',
-      '/api/placeholder/600/400?2'
-    ],
+    image: 'https://cdn.pixabay.com/photo/2015/12/23/18/32/airport-1105980_640.jpg',
+    // images: [
+    //   '/api/placeholder/600/400?1',
+    //   '/api/placeholder/600/400?2'
+    // ],
     category: ['airport', 'specialized'],
     color: 'bg-purple-500',
     features: [

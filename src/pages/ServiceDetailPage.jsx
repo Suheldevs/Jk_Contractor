@@ -102,7 +102,7 @@ export default function ServiceDetail() {
             )} */}
 
             {/* Tabs Navigation */}
-            <div className="flex flex-wrap gap-2 mb-8 border-b">
+            <div className="flex flex-wrap gap-2 mb-8 border-b border-gray-300">
               {['features', 'benefits', 'steps'].map((tab) => (
                 <button
                   key={tab}

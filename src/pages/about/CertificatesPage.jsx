@@ -17,6 +17,7 @@ import {
   Download
 } from 'lucide-react';
 import Breadcrumb from '../../components/Breadcrumb';
+import { Link } from 'react-router-dom';
 
 const CertificatesPage = () => {
   const [selectedCert, setSelectedCert] = useState(null);
@@ -292,10 +293,10 @@ const CertificatesPage = () => {
               </div>
               
               <div className="flex gap-3">
-                <button className="flex-1 bg-red-600 text-white px-6 py-3 rounded-xl hover:bg-red-700 transition-colors flex items-center justify-center gap-2">
+                <Link to='/contact' className="flex-1 bg-red-600 text-white px-6 py-3 rounded-xl hover:bg-red-700 transition-colors flex items-center justify-center gap-2">
                   <Eye className="w-5 h-5" />
                  Inquire For Certificate Detail
-                </button>
+                </Link>
                 <button 
                   onClick={() => setSelectedCert(null)}
                   className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors"
