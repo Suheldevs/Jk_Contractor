@@ -11,7 +11,7 @@
   import waste from '../assets/service/WasteManagement.webp'
  import house from '../assets/service/Housekeeping-Facilities.webp'
  import transport from '../assets/service/Transport-Logistics.webp'
- import sweeping from '../assets/service/sweeping.webp'
+ import sweeping from '../assets/service/Sweeping.webp'
  import food from '../assets/service/Food.webp'
  import Horticulture from '../assets/service/Horticulture.webp'
 
