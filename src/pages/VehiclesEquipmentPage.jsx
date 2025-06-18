@@ -370,12 +370,12 @@ const VehiclesEquipmentPage = () => {
                   alt={vehicle.name}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute top-4 right-4 flex items-center gap-2">
+                {/* <div className="absolute top-4 right-4 flex items-center gap-2">
                   <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                     <span className="text-sm font-medium text-gray-900">Qty: {vehicle.quantity}</span>
                   </div>
                   <div className="bg-green-500 w-3 h-3 rounded-full"></div>
-                </div>
+                </div> */}
               </div>
               
               <div className="p-6">
@@ -394,7 +394,7 @@ const VehiclesEquipmentPage = () => {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {vehicle.description}
                 </p>
-                
+                {/* 
                 <div className="space-y-2 mb-4">
                   {vehicle.uses.slice(0, 2).map((use, index) => (
                     <div key={index} className="flex items-center gap-2">
@@ -402,7 +402,7 @@ const VehiclesEquipmentPage = () => {
                       <span className="text-sm text-gray-700">{use}</span>
                     </div>
                   ))}
-                </div>
+                </div> */}
                 
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <span className="text-sm text-gray-500">View Details</span>
@@ -460,7 +460,7 @@ const VehiclesEquipmentPage = () => {
               />
               <button 
                 onClick={() => setSelectedVehicle(null)}
-                className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-700 hover:text-gray-900 w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold"
+                className="fixed top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-700 hover:text-gray-900 w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold"
               >
                 ×
               </button>
@@ -511,7 +511,7 @@ const VehiclesEquipmentPage = () => {
                 </div>
               </div>
               
-              <div className="flex gap-3 mt-8 pt-6 border-t border-gray-200">
+              {/* <div className="flex gap-3 mt-8 pt-6 border-t border-gray-200">
                 <button className="flex-1 bg-red-600 text-white px-6 py-3 rounded-xl hover:bg-red-700 transition-colors">
                   Request Information
                 </button>
@@ -521,7 +521,7 @@ const VehiclesEquipmentPage = () => {
                 >
                   Close
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

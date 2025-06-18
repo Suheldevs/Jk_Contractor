@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight, Shield, Leaf, Award, Clock } from 'lucide-react';
 import image from '../assets/about/about.png'
+import { Link } from 'react-router-dom';
 const AboutSection = () => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -112,17 +113,17 @@ const AboutSection = () => {
               
               {/* CTA buttons */}
               <div className="flex flex-wrap gap-4">
-                <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-red-600 text-white font-medium rounded-lg overflow-hidden transition-all hover:bg-red-700">
+                <Link to='/about/overview' className="group relative inline-flex items-center justify-center px-6 py-3 bg-red-600 text-white font-medium rounded-lg overflow-hidden transition-all hover:bg-red-700">
                   <span className="absolute inset-0 w-full h-full bg-white/10 blur-xl group-hover:blur-md transition-all duration-300 opacity-0 group-hover:opacity-100"></span>
                   <span className="relative flex items-center">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
-                </button>
+                </Link>
                 
-                <button className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg transition-all hover:bg-gray-50 hover:border-gray-400">
-                  Our Services
-                </button>
+                <Link to='/project' className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg transition-all hover:bg-gray-50 hover:border-gray-400">
+                  Our Projects
+                </Link>
               </div>
             </div>
           </div>

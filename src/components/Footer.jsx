@@ -52,7 +52,7 @@ export default function Footer() {
                 <p className="text-gray-300 leading-relaxed text-sm mt-4">
                   Leading the future of infrastructure with innovative solutions
                   and sustainable practices. Excellence in every project since
-                  2005.
+                  2007.
                 </p>
               </div>
 
@@ -120,7 +120,7 @@ export default function Footer() {
                   { name: "Equipment & Machinary", path: "/vehicles" },
                   { name: "Gallery", path: "/gallery" },
                   { name: "Blogs", path: "/blog" },
-                  { name: "Our Team", path: "/team" },
+                  { name: "Our Team", path: "/about/team" },
                
                 ].map((link, index) => (
                   <li key={index} className="group">
@@ -162,10 +162,10 @@ export default function Footer() {
                     <Mail size={16} className="text-red-500" />
                   </div>
                   <a
-                    href="mailto:info@infratech.com"
+                    href="mailto:jkcontractor786@gmail.com"
                     className="text-gray-300 hover:text-red-400 transition-colors duration-300 text-sm"
                   >
-                    info@infratech.com
+                    jkcontractor786@gmail.com
                   </a>
                 </li>
                 <li>
@@ -220,9 +220,9 @@ export default function Footer() {
 
               <div className="flex items-center space-x-6">
                 {[
-                  { name: "Terms of Service", path: "/terms" },
-                  { name: "Privacy Policy", path: "/privacy" },
-                  { name: "Cookie Policy", path: "/cookies" },
+                  // { name: "Terms of Service", path: "/terms" },
+                  { name: "Privacy Policy", path: "/privacy-policy" },
+                  { name: "Admin Login", path: "/" },
                 ].map((link, index) => (
                   <Link
                     key={index}

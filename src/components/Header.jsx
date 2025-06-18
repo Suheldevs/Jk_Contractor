@@ -64,7 +64,7 @@ const Header = () => {
       hasDropdown: true,
       dropdownItems: [
         { name: 'Company Overview', path: '/about/overview' },
-        // { name: 'Leadership Team', path: '/about/leadership' },
+        { name: 'Leadership Team', path: '/about/team' },
         { name: 'Certification', path: '/about/certification' },
       ],
     },

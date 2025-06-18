@@ -54,7 +54,7 @@ export default function ServiceDetail() {
       
 
       {/* Hero Section */}
-      <div className="bg-white py-14">
+      <div className="bg-white pt-14 pb-4">
         <div className="max-w-7xl mx-auto grid grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8">
           {/* Service Main Image */}
           <div className="rounded-2xl overflow-hidden shadow-xl mb-8">
@@ -68,9 +68,9 @@ export default function ServiceDetail() {
           <p className="text-lg sm:text-xl italic text-gray-700 leading-relaxed max-w-4xl">
             " {service.description} "
 
-            <div className='mt-10'>
+            {/* <div className='mt-10'>
                 <button className='bg-red-600 text-white rounded-md px-6 py-3'>Learn more</button>
-            </div>
+            </div> */}
           </p>
         </div>
       </div>
@@ -126,7 +126,7 @@ export default function ServiceDetail() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     {service.features.map((feature, index) => (
                       <div key={index} className="flex items-start gap-3 p-4 bg-green-50 rounded-xl">
-                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                           <Check className="w-4 h-4 text-white" />
                         </div>
                         <span className="text-gray-700 font-medium">{feature}</span>

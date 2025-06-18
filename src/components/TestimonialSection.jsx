@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, User, User2 } from "lucide-react";
 
 // Testimonial data - updated for contractor business
 const testimonials = [
@@ -154,11 +154,9 @@ function TestimonialCard({ testimonial, isFirst }) {
       </p>
       
       <div className="flex items-center">
-        <img
-          src={testimonial.image}
-          alt={testimonial.name}
-          className="w-12 h-12 rounded-full mr-4 object-cover"
+        <User2   className="w-8 h-8 rounded-full mr-4 object-cover"
         />
+        
         <div>
           <h4 className={`font-bold text-lg ${
             isFirst ? 'text-white' : 'text-gray-900'

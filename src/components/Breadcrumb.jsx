@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronRight, Home } from "lucide-react";
 import { Link } from "react-router-dom";
-import bread from '../assets/bread.jpg'
+import bread from '../assets/bread.webp'
 // Modern Breadcrumb Component with 3 props:
 // - title: string (page title)
 // - items: array of {name: string, path: string} (navigation items)
@@ -31,6 +31,7 @@ export default function Breadcrumb({ title = "Page Title", items = [], bgImage =
         className="absolute inset-0 w-full h-full bg-cover bg-center"
         style={{ 
           backgroundImage: `url(${bgImage})`
+          // backgroundImage: `url('https://img.freepik.com/premium-photo/plane-runway_889056-588.jpg?ga=GA1.1.2072633354.1750131807&w=740')`
         }}
       />
       

@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Breadcrumb from "../components/Breadcrumb";
 import axios from "axios";
+import services from "../data/ServiceData";
 
 export default function ContactUsPage() {
   const backend_url = import.meta.env.VITE_BACKEND_URL
@@ -60,7 +61,6 @@ setError('Something Went Wrong , Try Later !')
   };
 
   const breadcrumbItems = [
-    { name: "Home", path: "/" },
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -68,23 +68,23 @@ setError('Something Went Wrong , Try Later !')
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      content: "+91-9415113355",
+      content: "+91-95XXXXXXXX",
       details: "Monday to Friday, 9am to 6pm",
       link:'tel:9415113355'
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
-      content: "support@yourcompany.com",
+      content: "jkcontractor786@gmail.com",
       details: "We'll respond within 24 hours",
-      link:'mailto:support@gmail.com'
+      link:'mailto:jkcontractor786@gmail.com'
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Visit Us",
-      content: "HIG-42 Sector-E, Aliganj, Lucknow",
+      content: "306, SHAHBAD MOHD .PUR, NEAR IGI AIRPORT, NEW DELHI",
       details: "Find us on Google Maps",
-      link:'https://maps.app.goo.gl/o5pdPpz7rtbvcN1N8'
+      link:'https://maps.app.goo.gl/wEXetkDwPhHMhEpU7'
     },
   ];
 
@@ -248,18 +248,12 @@ setError('Something Went Wrong , Try Later !')
                       <option value="" selected>
                         Select a Service
                       </option>
-                      <option value="architectural-consultant">
-                        Architectural Consultant
-                      </option>
-                      <option value="interior-design">Interior Design</option>
-                      <option value="engineering-services">
-                        Engineering Services
-                      </option>
-                      <option value="vastu-services">Vastu Services</option>
-                      <option value="project-management">
-                        Project Management
-                      </option>
-                      <option value="urban-planning">Urban Planning</option>
+                     {services.map((item,i)=>(
+                       <option key={i} value={item.title}>
+                        {item.title}
+                        </option>
+                     ))}
+                     
                     </select>
                   </div>
                 </div>
@@ -384,7 +378,7 @@ setError('Something Went Wrong , Try Later !')
           <div className="aspect-w-16 aspect-h-9 w-full rounded-xl overflow-hidden lg:h-96">
             <iframe
             className="w-full h-full"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.5013528711643!2d80.93925357468287!3d26.88757947666216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3999562b42ee1ea1%3A0xc9ab179186eddb10!2sAgarwal%20and%20associates!5e0!3m2!1sen!2sin!4v1746380775936!5m2!1sen!2sin"
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.442408029244!2d77.06615637408423!3d28.5564750220151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1ba5cb180599%3A0xd9a5b31232ceadaf!2sJK%20Contractor%2C%20365%20Shahabad%20Mohd.%20Pur%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1748574582617!5m2!1sen!2sin"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

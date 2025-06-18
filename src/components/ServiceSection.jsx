@@ -23,7 +23,7 @@ const ServicesSection = () => {
     : services.filter(service => service.category.includes(activeFilter));
 
   return (
-    <section className="lg:py-10 py-14 bg-gray-50">
+    <section className="lg:py-10 py-14 bg-gray-50" id='service'>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-6">
