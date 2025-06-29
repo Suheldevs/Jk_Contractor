@@ -18,6 +18,7 @@ export default function ContactUsPage() {
     name: "",
     email: "",
     phone:'',
+    service:'',
     message: "",
   });
 
@@ -42,13 +43,14 @@ export default function ContactUsPage() {
     
     try{
       setFormStatus({loading:true})
-      const response = await axios.post(`${backend_url}/inquiry/agarwal/save`, formState);
+      const response = await axios.post(`${backend_url}/inquiry/save`, formState);
       setFormStatus({submitted:true})
       alert('Your Form Has Been Submitted!')
 setFormState({
   name: "",
   email: "",
   phone:'',
+  service:'',
   message: "",
 })
     }

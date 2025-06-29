@@ -115,7 +115,7 @@ const ProjectsSection = () => {
                     {selectedProject.title}
                   </h2>
 
-                  <div className="flex gap-5 items-center mb-2">
+                  {/* <div className="flex gap-5 items-center mb-2">
                     <div className="flex items-center text-gray-500 ">
                       <MapPin size={16} className="mr-2" />
                       <span>{selectedProject.location}</span>
@@ -125,7 +125,7 @@ const ProjectsSection = () => {
                       <Calendar size={16} className="mr-2" />
                       <span>{selectedProject.date}</span>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="bg-gray-50 p-6 rounded-lg mb-6">
                     <h3 className="font-semibold text-gray-900 mb-3">
@@ -142,7 +142,7 @@ const ProjectsSection = () => {
                     </p>
 
                   
-                    <h3 className="font-semibold text-gray-900 my-2">
+                    {/* <h3 className="font-semibold text-gray-900 my-2">
                       Key Features
                     </h3>
                     <ul className="space-y-2">
@@ -170,7 +170,7 @@ const ProjectsSection = () => {
                           Improved passenger flow and accessibility
                         </span>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
 
                   <Link

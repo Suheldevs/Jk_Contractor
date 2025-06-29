@@ -1,5 +1,6 @@
 import { Shield, Users, Clock, Award, CheckCircle, Star } from 'lucide-react';
 import whychooseus from '../assets/about/whychooseus.png'
+import { Link } from 'react-router-dom';
 const WhyChooseUs = () => {
   const features = [
     {
@@ -33,14 +34,14 @@ const WhyChooseUs = () => {
 
   return (
     <section className="py-6 ">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto lg:px-4 px-2">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid lg:grid-cols-2">
             
             {/* Left Content Section */}
-            <div className="p-8 lg:p-12 bg-gradient-to-br from-red-600 to-red-700 text-white">
+            <div className="p-6 lg:p-12 bg-gradient-to-br from-red-600 to-red-700 text-white">
               <div className="mb-8">
-                <h3 className="text-4xl play lg:text-4xl font-bold mb-4">
+                <h3 className="text-3xl play lg:text-4xl font-bold mb-4">
                   Why Choose JK Construction?
                 </h3>
                 <p className="text-red-100 text-lg leading-relaxed">
@@ -50,7 +51,7 @@ const WhyChooseUs = () => {
               </div>
               
               {/* Feature List */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mb-4 lg:mb-8">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white">
@@ -65,10 +66,10 @@ const WhyChooseUs = () => {
               </div>
 
               {/* CTA Button */}
-              <button className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center">
+              <Link to='/contact' className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center">
                 <CheckCircle className="w-5 h-5 mr-2" />
                 Get Free Consultation
-              </button>
+              </Link>
             </div>
             
             {/* Right Image Section */}
@@ -76,7 +77,7 @@ const WhyChooseUs = () => {
               <img 
                 src={whychooseus}
                 alt="JK Construction Team at Work" 
-                className="w-full h-full object-cove min-h-[500px]"
+                className="w-full h-full object-cove lg:min-h-[500px] min-h-[350px]"
               />
               
               {/* Overlay with Stats */}

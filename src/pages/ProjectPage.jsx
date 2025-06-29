@@ -130,7 +130,7 @@ const ProjectPage = () => {
                     </p>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-4 mb-6">
+                  {/* <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="bg-gray-50 p-4 rounded-lg">
                       <div className="text-sm text-gray-500 mb-1">Project Duration</div>
                       <div className="font-semibold">12 months</div>
@@ -139,9 +139,9 @@ const ProjectPage = () => {
                       <div className="text-sm text-gray-500 mb-1">Project Value</div>
                       <div className="font-semibold">$24.5M</div>
                     </div>
-                  </div>
+                  </div> */}
                   
-                  <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                  {/* <div className="bg-gray-50 p-6 rounded-lg mb-6">
                     <h3 className="font-semibold text-gray-900 mb-3">Key Features</h3>
                     <ul className="space-y-2">
                       <li className="flex items-start">
@@ -163,7 +163,7 @@ const ProjectPage = () => {
                         <span className="text-gray-600">Improved passenger flow and accessibility</span>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                   
                   <button
                     className="bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors"

@@ -34,7 +34,7 @@ export default function Footer() {
                       </div>
                       <div className="absolute inset-0 rounded-2xl border border-white/30" />
                     </div>
-                    <div className="hidden sm:block">
+                    <div className="block">
                       <div
                         className={`font-bold text-xl transition-colors duration-300 `}
                       >
@@ -170,7 +170,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <iframe
-                  className="h-32 w-full p-0 m-0  rounded-2xl"
+                  className="h-32 w-full p-0 lg:mt-0 mt-2  rounded-2xl"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.442408029244!2d77.06615637408423!3d28.5564750220151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1ba5cb180599%3A0xd9a5b31232ceadaf!2sJK%20Contractor%2C%20365%20Shahabad%20Mohd.%20Pur%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1748574582617!5m2!1sen!2sin"
                    allowFullScreen=""
                     loading="lazy"

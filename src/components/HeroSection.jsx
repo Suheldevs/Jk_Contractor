@@ -148,7 +148,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full lg:h-screen h-[95vh] overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
         <video
@@ -179,7 +179,7 @@ const HeroSection = () => {
         <div className={`max-w-5xl mx-auto text-center transition-all duration-1000 transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           
           {/* Welcome Badge */}
-          <div className="inline-flex border border-white/30 justify-center items-center gap-3 mb-4 bg-black/20 backdrop-blur-md p-3 px-6 rounded-full text-lg hover:bg-black/30 transition-all duration-300 group">
+          <div className="inline-flex border border-white/30 justify-center items-center gap-3 mb-4 bg-black/20 backdrop-blur-md p-3 px-6 rounded-full md:text-lg  hover:bg-black/30 transition-all duration-300 group">
             <div className="bg-red-600 h-2.5 w-2.5 rounded-full animate-pulse"></div> 
             <span className="bg-gradient-to-r from-white to-red-100 bg-clip-text text-transparent font-medium">
               Welcome To JK Contractor
@@ -204,16 +204,16 @@ const HeroSection = () => {
             <p className="text-gray-50 font-light">
               Safe, Sustainable, and Smart Solutions for Modern Airports
             </p>
-            <div className="flex items-center justify-center gap-6 mt-4 lg:text-sm text-xs text-gray-100">
-              <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center lg:gap-6 gap-2 mt-4 lg:text-sm text-xs text-gray-100">
+              <div className="flex items-center lg:gap-2 gap-0.5">
                 <Shield className="w-4 h-4 text-red-500" />
                 <span>BCAS Certified</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center lg:gap-2 gap-0.5">
                 <Award className="w-4 h-4 text-red-500" />
                 <span>ISO 14001:2015</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center lg:gap-2 gap-0.5">
                 <Zap className="w-4 h-4 text-red-500" />
                 <span>Since 2007</span>
               </div>

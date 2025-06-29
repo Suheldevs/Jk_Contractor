@@ -88,7 +88,7 @@ export default function TestimonialSection() {
             </span>
           </div>
             
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl play lg:text-5xl font-bold text-gray-900 leading-tight">
               What Our Clients Say About{" "}
               <span className="text-red-600">JK Construction</span>
             </h2>

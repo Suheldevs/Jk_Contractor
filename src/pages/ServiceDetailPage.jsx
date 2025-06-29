@@ -55,7 +55,7 @@ export default function ServiceDetail() {
 
       {/* Hero Section */}
       <div className="bg-white pt-14 pb-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-10 px-4 sm:px-6 lg:px-8">
           {/* Service Main Image */}
           <div className="rounded-2xl overflow-hidden shadow-xl mb-8">
             <img 

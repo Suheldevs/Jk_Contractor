@@ -128,7 +128,7 @@ export default function BlogSection() {
             <span className="text-red-600 font-semibold text-sm">Latest Insights</span>
           </div>
           <h2 className="text-3xl play lg:text-4xl font-bold text-gray-900 mb-4">
-            From <span className='text-red-600'>Our</span> Blog
+            <span className='text-red-600'>Our</span> Blog
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Stay updated with the latest trends, insights, and innovations in infrastructure and environmental services.
@@ -172,7 +172,7 @@ export default function BlogSection() {
                   className="flex-shrink-0 px-3"
                   style={{ width: `${100 / slidesToShow}%` }}
                 >
-                  <div className="bg-white aspect-square flex flex-col overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 rounded-lg group">
+                  <div className="bg-white aspect-auto flex flex-col overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 rounded-lg group">
                     {/* Image section */}
                     <div className="h-1/2 overflow-hidden">
                       <img 
