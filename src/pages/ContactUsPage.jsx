@@ -13,7 +13,7 @@ import axios from "axios";
 import services from "../data/ServiceData";
 
 export default function ContactUsPage() {
-  const backend_url = import.meta.env.VITE_BACKEND_URL
+  const backend_url = import.meta.env.VITE_BACKEND_URL || 'https://jk-contractor-backend.onrender.com'
   const [formState, setFormState] = useState({
     name: "",
     email: "",
