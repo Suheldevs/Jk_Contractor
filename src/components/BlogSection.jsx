@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, Tag, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import blogPosts from '../data/BlogData';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchBlogData } from '../redux/dataSlice';
 // Mock Link component since react-router-dom isn't available
 const Link = ({ to, children, className, ...props }) => (
   <a href={to} className={className} {...props}>
@@ -69,9 +71,17 @@ const Link = ({ to, children, className, ...props }) => (
 export default function BlogSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  // Responsive slides per view
   const [slidesToShow, setSlidesToShow] = useState(3);
+
+  const dispatch = useDispatch()
+  
+    const {blogData, error, status} = useSelector((state)=>state.data)
+  
+    useEffect(()=>{
+      dispatch(fetchBlogData())
+    },[dispatch])
+
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -118,6 +128,53 @@ export default function BlogSection() {
   };
 
   const maxSlide = Math.max(0, blogPosts.length - slidesToShow);
+
+
+ if (status == "loading") {
+    return (
+      <>
+        <div className="text-xl h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+          Loading..
+        </div>
+      </>
+    );
+  }
+
+  if (blogData?.length == 0) {
+    return (
+      <>
+        <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+          Blog Data Not Found!
+        </div>
+      </>
+    );
+  }
+  if (error) {
+    return (
+      <>
+        <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+          {error}
+        </div>
+      </>
+    );
+  }
+ const formateDate = (date) => {
+  if (!date) return "Date";
+
+  try {
+    // Ensure it's a Date object
+    const newDate = new Date(date).toLocaleDateString("en-IN", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+
+    return newDate;
+  } catch (error) {
+    console.error("Invalid date:", error);
+    return "Date";
+  }
+};
 
   return (
     <section className="bg-white py-14">
@@ -166,9 +223,9 @@ export default function BlogSection() {
                 transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)`
               }}
             >
-              {blogPosts.map(post => (
+              {blogData?.map(post => (
                 <div 
-                  key={post.id} 
+                  key={post._id} 
                   className="flex-shrink-0 px-3"
                   style={{ width: `${100 / slidesToShow}%` }}
                 >
@@ -176,19 +233,19 @@ export default function BlogSection() {
                     {/* Image section */}
                     <div className="h-1/2 overflow-hidden">
                       <img 
-                        src={post.image} 
+                        src={post.imageUrl} 
                         alt={post.title} 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     
                     {/* Content section */}
-                    <div className="p-4 flex flex-col flex-grow">
+                    <div className="p-2 flex flex-col flex-grow">
                       {/* Date and Category row */}
                       <div className="flex justify-between items-center mb-3 text-xs">
                         <div className="flex items-center text-gray-500">
                           <Clock className="h-3 w-3 mr-1" />
-                          {post.date}
+                          {formateDate(post?.createAt)}
                         </div>
                         <div className="inline-flex items-center bg-red-600 px-2 py-1 rounded-sm text-xs font-medium text-white">
                           <Tag className="h-3 w-3 mr-1" />

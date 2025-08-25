@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X, MapPin, Calendar, ArrowRight } from 'lucide-react';
 import projects from '../data/ProjectData';
 import Breadcrumb from '../components/Breadcrumb';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProjectData } from '../redux/dataSlice';
 const ProjectPage = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Sample project data
  
+
+ const dispatch = useDispatch()
+
+  const {projectData, error, status} = useSelector((state)=>state.data)
+
+  useEffect(()=>{
+    dispatch(fetchProjectData())
+  },[dispatch])
+
+
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -22,13 +32,81 @@ const ProjectPage = () => {
     // Restore body scroll when modal is closed
     document.body.style.overflow = 'auto';
   };
+  if (status == "loading") {
+    return (
+      <>
+        <Breadcrumb
+          title="Project"
+          items={[
+            { label: "Home", link: "/" },
+            { label: "Project", link: "/project" },
+          ]}
+        />
+        <div className="text-xl h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+          Loading..
+        </div>
+      </>
+    );
+  }
+  if (projectData?.length == 0) {
+    return (
+      <>
+        <Breadcrumb
+          title="Project"
+          items={[
+            { label: "Home", link: "/" },
+            { label: "Project", link: "/project" },
+          ]}
+          // bgImage="/api/placeholder/1920/600"
+        />
+        <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+          Project Data Not Found!
+        </div>
+      </>
+    );
+  }
+  if (error) {
+    return (
+      <>
+        <Breadcrumb
+          title="Project"
+          items={[
+            { label: "Home", link: "/" },
+            { label: "Project", link: "/project" },
+          ]}
+          // bgImage="/api/placeholder/1920/600"
+        />
+        <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+          {error}
+        </div>
+      </>
+    );
+  }
+
+ const formateDate = (date) => {
+  if (!date) return "Date";
+
+  try {
+    // Ensure it's a Date object
+    const newDate = new Date(date).toLocaleDateString("en-IN", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+
+    return newDate;
+  } catch (error) {
+    console.error("Invalid date:", error);
+    return "Date";
+  }
+};
 
   return (
     <>
     <Breadcrumb
            title="Featured Projects"
            items={[  
-    { name: "OUR PROJECTS", path: "/project" },]}
+    { name: "OUR PROJECTS", path: "/project" }]}
            
          />
     <section className="py-20 bg-white">
@@ -37,7 +115,7 @@ const ProjectPage = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projects.map((project) => (
+          {projectData?.map((project) => (
             <div 
               key={project.id} 
               className="group relative bg-gray-100 rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
@@ -46,7 +124,7 @@ const ProjectPage = () => {
               {/* Project Image */}
               <div className="aspect-w-4 aspect-h-3 relative">
                 <img 
-                  src={project.image} 
+                  src={project.mainImageUrl} 
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -90,13 +168,13 @@ const ProjectPage = () => {
           </button>
           
           <div className="w-full h-full p-4 md:p-10 overflow-y-auto">
-            <div className="max-w-6xl mx-auto bg-white rounded-xl overflow-hidden shadow-2xl">
+            <div className="max-w-6xl h-[90%] mx-auto bg-white rounded-xl overflow-hidden shadow-2xl">
               <div className="grid md:grid-cols-2">
                 <div className="h-full">
                   <img 
-                    src={selectedProject.image} 
+                    src={selectedProject.mainImageUrl} 
                     alt={selectedProject.title} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-[90%] object-cover"
                   />
                 </div>
                 
@@ -116,17 +194,17 @@ const ProjectPage = () => {
                   
                   <div className="flex items-center text-gray-500 mb-6">
                     <Calendar size={16} className="mr-2" />
-                    <span>{selectedProject.date}</span>
+                    <span>{formateDate(selectedProject?.updatedAt)}</span>
                   </div>
                   
                   <div className="bg-gray-50 p-6 rounded-lg mb-6">
                     <h3 className="font-semibold text-gray-900 mb-3">Project Overview</h3>
                     <p className="text-gray-600">
-                      {selectedProject.description}
+                      {selectedProject?.description}
                       {/* Extended description for modal */}
-                      <br /><br />
+                      {/* <br /><br />
                       JK Contractor successfully completed this project with a focus on quality, efficiency, and sustainability. 
-                      The project was delivered on time and within budget, meeting all client specifications and exceeding expectations.
+                      The project was delivered on time and within budget, meeting all client specifications and exceeding expectations. */}
                     </p>
                   </div>
                   
@@ -165,15 +243,6 @@ const ProjectPage = () => {
                     </ul>
                   </div> */}
                   
-                  <button
-                    className="bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors"
-                    onClick={() => {
-                      console.log(`Contact about project: ${selectedProject.title}`);
-                      closeModal();
-                    }}
-                  >
-                    Inquire About This Project
-                  </button>
                 </div>
               </div>
             </div>
