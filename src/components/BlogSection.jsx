@@ -177,7 +177,7 @@ export default function BlogSection() {
 };
 
   return (
-    <section className="bg-white py-14">
+    <section className="bg-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-10">
@@ -233,8 +233,8 @@ export default function BlogSection() {
                     {/* Image section */}
                     <div className="h-1/2 overflow-hidden">
                       <img 
-                        src={post.imageUrl} 
-                        alt={post.title} 
+                        src={post?.imageUrl} 
+                        alt={post?.title} 
                         className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
@@ -259,8 +259,10 @@ export default function BlogSection() {
                       </h3>
                       
                       {/* Description */}
-                      <p className="text-gray-600 mb-4 line-clamp-3 flex-grow text-sm">
-                        {post.description}
+                      <p  className="text-gray-600 mb-4 line-clamp-2 flex-grow text-sm">
+                        {/* {post.description} */}
+                        {new DOMParser().parseFromString(post?.description, "text/html").body.textContent}
+                        {/* {post.description} */}
                       </p>
                       
                       {/* Read More button */}
