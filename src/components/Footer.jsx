@@ -222,7 +222,7 @@ export default function Footer() {
                 {[
                   // { name: "Terms of Service", path: "/terms" },
                   { name: "Privacy Policy", path: "/privacy-policy" },
-                  { name: "Admin Login", path: "/" },
+                  { name: "Admin Login", path: "/https://jkcontractor-admin.netlify.app/" },
                 ].map((link, index) => (
                   <Link
                     key={index}
