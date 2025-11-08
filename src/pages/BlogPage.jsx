@@ -10,7 +10,7 @@ export default function BlogPage() {
   const dispatch = useDispatch()
   
     const {blogData, error, status} = useSelector((state)=>state.data)
-  
+  console.log(blogData)
     useEffect(()=>{
       dispatch(fetchBlogData())
     },[dispatch])
@@ -72,7 +72,7 @@ export default function BlogPage() {
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-gray-50">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogData?.map(post => (
+        {Array.isArray(blogData) && blogData?.map(post => (
                     <div key={post.id} className="px-3">
                       <div className="bg-white aspect-square flex flex-col overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200">
                         {/* Image section */}

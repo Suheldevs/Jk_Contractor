@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Clock, ChevronLeft, ArrowRight } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
-import blogData from '../data/BlogData'
 import Breadcrumb from '../components/Breadcrumb';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBlogData } from '../redux/dataSlice';
@@ -13,19 +12,26 @@ export default function BlogDetail() {
     const dispatch = useDispatch()
   
     const {blogData, error, status} = useSelector((state)=>state.data)
-  
-    useEffect(()=>{
-      dispatch(fetchBlogData())
-    },[dispatch])
+useEffect(() => {
+  // Fetch only if blogData is empty
+  if (!blogData || blogData.length === 0) {
+    dispatch(fetchBlogData());
+  }
+}, [dispatch, blogData]);
 
-  useEffect(() => {
+
+useEffect(() => {
+  if (blogData.length > 0) {
     const currentBlog = blogData.find(blog => blog.slug === slug);
     setBlog(currentBlog);
     if (currentBlog) {
-      const otherBlogs = blogData.filter(item => item.id !== currentBlog.id).slice(0, 4);
+      const otherBlogs = blogData
+        .filter(item => item.slug !== currentBlog.slug)
+        .slice(0, 4);
       setRelatedBlogs(otherBlogs);
     }
-  }, [slug]);
+  }
+}, [slug, blogData]);
 
 
    const formateDate = (date) => {
@@ -46,16 +52,24 @@ export default function BlogDetail() {
   }
 };
 
-  if (!blog) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="animate-pulse">
-          <div className="w-8 h-8 bg-red-600 rounded-full animate-bounce"></div>
-          <p className="text-xl font-medium mt-4">Loading...</p>
-        </div>
+ if (!blog) {
+  return (
+    <>
+    <div className='h-20 w-full bg-neutral-950'></div>
+
+    <div className="max-w-4xl mx-auto px-4 py-20 animate-pulse">
+      <div className="h-8 bg-gray-200 rounded w-3/4 mb-6"></div>
+      <div className="h-64 bg-gray-200 rounded mb-6"></div>
+      <div className="space-y-3">
+        <div className="h-4 bg-gray-200 rounded"></div>
+        <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+        <div className="h-4 bg-gray-200 rounded w-4/6"></div>
       </div>
-    );
-  }
+    </div>
+        </>
+  );
+}
+
 
   return (
     <>
@@ -107,8 +121,8 @@ export default function BlogDetail() {
             </div>
             
             {/* Blog Content */}
-            <div className="prose lg:prose-xl max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-red-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-blockquote:border-red-500 prose-blockquote:bg-red-50 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-lg" 
-                 > {new DOMParser().parseFromString(blog?.description, "text/html").body.textContent}
+            <div className="prose blog lg:prose-xl max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-red-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-blockquote:border-red-500 prose-blockquote:bg-red-50 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-lg" 
+                 dangerouslySetInnerHTML={{ __html: blog?.description || "" }}> 
             </div>
             
           </div>
@@ -122,7 +136,7 @@ export default function BlogDetail() {
                   <p className="text-red-100 text-sm mt-1">You might also like</p>
                 </div>
                 
-                <div className="p-6">
+                <div className="p-2">
                   <div className="space-y-6">
                     {relatedBlogs?.map((article, index) => (
                       <div key={article.id} className={`${index !== relatedBlogs.length - 1 ? 'border-b border-gray-100 pb-6' : ''}`}>
@@ -136,9 +150,9 @@ export default function BlogDetail() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                           </div>
                           
-                          <span className="text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded-full">
+                          {/* <span className="text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded-full">
                             {article?.category}
-                          </span>
+                          </span> */}
                           
                           <h3 className="font-bold text-sm mt-2 line-clamp-2 group-hover:text-red-600 transition-colors duration-300 leading-snug">
                             {article?.title}
@@ -146,7 +160,7 @@ export default function BlogDetail() {
                           
                           <div className="flex items-center mt-2 text-gray-500 text-xs">
                             <Clock className="w-3 h-3 mr-1" />
-                            <span>{formateDate(article.createAt)}</span>
+                            <span>{formateDate(article.createdAt)}</span>
                           </div>
                         </Link>
                       </div>

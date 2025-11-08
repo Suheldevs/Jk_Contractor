@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { X, MapPin, Calendar, ArrowRight } from "lucide-react";
-import projects from "../data/ProjectData";
-import { Link } from "react-router-dom";
 import { fetchProjectData } from "../redux/dataSlice";
 import { useDispatch, useSelector } from "react-redux";
 const ProjectsSection = () => {
@@ -38,7 +36,7 @@ const ProjectsSection = () => {
     );
   }
 
-  if (projectData?.length == 0) {
+  if (projectData.length == 0) {
     return (
       <>
         <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
@@ -95,7 +93,7 @@ const ProjectsSection = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projectData?.map((project) => (
+          {Array.isArray(projectData) && projectData?.map((project) => (
             <div
               key={project.id}
               className="group relative bg-gray-100 rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
@@ -182,8 +180,7 @@ const ProjectsSection = () => {
                           
                           <div className="bg-gray-50 p-6 rounded-lg mb-6">
                             <h3 className="font-semibold text-gray-900 mb-3">Project Overview</h3>
-                            <p className="text-gray-600">
-                              {selectedProject?.description}
+                            <p className="text-gray-600 h-72 overflow-auto" dangerouslySetInnerHTML={{ __html: selectedProject?.description || "" }}>
                               {/* Extended description for modal */}
                               {/* <br /><br />
                               JK Contractor successfully completed this project with a focus on quality, efficiency, and sustainability. 

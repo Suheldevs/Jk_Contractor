@@ -1,72 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, Tag, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import blogPosts from '../data/BlogData';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBlogData } from '../redux/dataSlice';
+import { fetchBlogData} from '../redux/dataSlice';
 // Mock Link component since react-router-dom isn't available
 const Link = ({ to, children, className, ...props }) => (
   <a href={to} className={className} {...props}>
     {children}
   </a>
 );
-
-// Mock blog data
-// const blogPosts = [
-//   {
-//     id: 1,
-//     title: "Revolutionizing Airport Infrastructure Management",
-//     description: "Discover how modern technology is transforming airport operations and passenger experiences through innovative infrastructure solutions.",
-//     image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=300&fit=crop",
-//     date: "Dec 15, 2024",
-//     category: "Airport Management",
-//     slug: "revolutionizing-airport-infrastructure"
-//   },
-//   {
-//     id: 2,
-//     title: "Sustainable Waste Management Solutions",
-//     description: "Exploring eco-friendly approaches to solid waste management that benefit both communities and the environment.",
-//     image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&h=300&fit=crop",
-//     date: "Dec 12, 2024",
-//     category: "Environment",
-//     slug: "sustainable-waste-management"
-//   },
-//   {
-//     id: 3,
-//     title: "Smart City Infrastructure Development",
-//     description: "How intelligent infrastructure planning is creating more livable and efficient urban environments for the future.",
-//     image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?w=400&h=300&fit=crop",
-//     date: "Dec 10, 2024",
-//     category: "Smart Cities",
-//     slug: "smart-city-infrastructure"
-//   },
-//   {
-//     id: 4,
-//     title: "Green Landscaping & Horticulture Trends",
-//     description: "Latest trends in sustainable landscaping that enhance urban spaces while promoting environmental conservation.",
-//     image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
-//     date: "Dec 8, 2024",
-//     category: "Landscaping",
-//     slug: "green-landscaping-trends"
-//   },
-//   {
-//     id: 5,
-//     title: "Municipal Services Innovation",
-//     description: "Innovative approaches to municipal service delivery that improve citizen satisfaction and operational efficiency.",
-//     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop",
-//     date: "Dec 5, 2024",
-//     category: "Municipal",
-//     slug: "municipal-services-innovation"
-//   },
-//   {
-//     id: 6,
-//     title: "Project Management Excellence",
-//     description: "Best practices in infrastructure project management that ensure timely delivery and quality outcomes.",
-//     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop",
-//     date: "Dec 3, 2024",
-//     category: "Management",
-//     slug: "project-management-excellence"
-//   }
-// ];
 
 export default function BlogSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -76,7 +17,7 @@ export default function BlogSection() {
   const dispatch = useDispatch()
   
     const {blogData, error, status} = useSelector((state)=>state.data)
-  
+  console.log(blogData)
     useEffect(()=>{
       dispatch(fetchBlogData())
     },[dispatch])
@@ -105,7 +46,7 @@ export default function BlogSection() {
 
     const interval = setInterval(() => {
       setCurrentSlide(prev => {
-        const maxSlide = Math.max(0, blogPosts.length - slidesToShow);
+        const maxSlide = Math.max(0, blogData.length - slidesToShow);
         return prev >= maxSlide ? 0 : prev + 1;
       });
     }, 4000);
@@ -114,12 +55,12 @@ export default function BlogSection() {
   }, [isAutoPlaying, slidesToShow]);
 
   const nextSlide = () => {
-    const maxSlide = Math.max(0, blogPosts.length - slidesToShow);
+    const maxSlide = Math.max(0, blogData.length - slidesToShow);
     setCurrentSlide(prev => prev >= maxSlide ? 0 : prev + 1);
   };
 
   const prevSlide = () => {
-    const maxSlide = Math.max(0, blogPosts.length - slidesToShow);
+    const maxSlide = Math.max(0, blogData.length - slidesToShow);
     setCurrentSlide(prev => prev <= 0 ? maxSlide : prev - 1);
   };
 
@@ -127,7 +68,7 @@ export default function BlogSection() {
     setCurrentSlide(index);
   };
 
-  const maxSlide = Math.max(0, blogPosts.length - slidesToShow);
+  const maxSlide = Math.max(0, blogData.length - slidesToShow);
 
 
  if (status == "loading") {
@@ -159,22 +100,16 @@ export default function BlogSection() {
     );
   }
  const formateDate = (date) => {
-  if (!date) return "Date";
-
-  try {
-    // Ensure it's a Date object
-    const newDate = new Date(date).toLocaleDateString("en-IN", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    });
-
-    return newDate;
-  } catch (error) {
-    console.error("Invalid date:", error);
-    return "Date";
-  }
+  if (!date) return "N/A";
+  const parsed = new Date(date);
+  if (isNaN(parsed)) return "Invalid Date";
+  return parsed.toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
 };
+
 
   return (
     <section className="bg-white py-12">
@@ -223,7 +158,7 @@ export default function BlogSection() {
                 transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)`
               }}
             >
-              {blogData?.map(post => (
+              {Array.isArray(blogData) && blogData?.map(post => (
                 <div 
                   key={post._id} 
                   className="flex-shrink-0 px-3"
@@ -245,7 +180,7 @@ export default function BlogSection() {
                       <div className="flex justify-between items-center mb-3 text-xs">
                         <div className="flex items-center text-gray-500">
                           <Clock className="h-3 w-3 mr-1" />
-                          {formateDate(post?.createAt)}
+                          {formateDate(post?.createdAt)}
                         </div>
                         <div className="inline-flex items-center bg-red-600 px-2 py-1 rounded-sm text-xs font-medium text-white">
                           <Tag className="h-3 w-3 mr-1" />

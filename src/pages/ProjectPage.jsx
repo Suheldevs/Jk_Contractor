@@ -126,12 +126,12 @@ const ProjectPage = () => {
                 <img 
                   src={project.mainImageUrl} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full lg:h-[300px] h-[200px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <p className="text-white text-sm line-clamp-2 mb-2">{project.description}</p>
+                  <p className="text-white text-sm line-clamp-2 mb-2" dangerouslySetInnerHTML={{ __html: project?.description || "" }}></p>
                   <div className="flex items-center text-white/90 text-sm">
                     <MapPin size={14} className="mr-1" />
                     <span>{project.location}</span>
@@ -199,8 +199,8 @@ const ProjectPage = () => {
                   
                   <div className="bg-gray-50 p-6 rounded-lg mb-6">
                     <h3 className="font-semibold text-gray-900 mb-3">Project Overview</h3>
-                    <p className="text-gray-600">
-                      {selectedProject?.description}
+                    <p className="text-gray-600 h-72 overflow-auto" dangerouslySetInnerHTML={{ __html: selectedProject?.description || "" }}>
+                      {/* {selectedProject?.description} */}
                       {/* Extended description for modal */}
                       {/* <br /><br />
                       JK Contractor successfully completed this project with a focus on quality, efficiency, and sustainability. 
