@@ -2,71 +2,72 @@ import { User, Mail, Phone, MapPin, Award, Users, Building2 } from "lucide-react
 import Breadcrumb from "../components/Breadcrumb";
 
 const TeamPage = () => {
-  const teamMembers = [
-    {
-      name: "ANAND KUMAR",
-      position: "MANAGING DIRECTOR",
-      image: "/api/placeholder/300/300",
-      email: "anand@company.com",
-      phone: "+91 98765 43210"
-    },
-    {
-      name: "DEEPAK SHUKLA",
-      position: "CHIEF EXECUTIVE OFFICER",
-      image: "/api/placeholder/300/300",
-      email: "deepak@company.com",
-      phone: "+91 98765 43211"
-    },
-    {
-      name: "DRON SOLANKI",
-      position: "VICE PRESIDENT",
-      image: "/api/placeholder/300/300",
-      email: "dron@company.com",
-      phone: "+91 98765 43212"
-    },
-    {
-      name: "GOPAL VERMA",
-      position: "EXECUTIVE MANAGER",
-      image: "/api/placeholder/300/300",
-      email: "gopal@company.com",
-      phone: "+91 98765 43213"
-    },
-    {
-      name: "RAMESH KUMAR",
-      position: "GENERAL MANAGER",
-      image: "/api/placeholder/300/300",
-      email: "ramesh@company.com",
-      phone: "+91 98765 43214"
-    },
-    {
-      name: "SHYAM SINGH",
-      position: "PROJECT MANAGER GGIAL OPERATIONS",
-      image: "/api/placeholder/300/300",
-      email: "shyam@company.com",
-      phone: "+91 98765 43215"
-    },
-    {
-      name: "HEMANT KUMAR",
-      position: "P.R.O.",
-      image: "/api/placeholder/300/300",
-      email: "hemant@company.com",
-      phone: "+91 98765 43216"
-    },
-    {
-      name: "ROBIN MISHRA",
-      position: "OPERATION & MAINTENANCE MANAGER",
-      image: "/api/placeholder/300/300",
-      email: "robin@company.com",
-      phone: "+91 98765 43217"
-    },
-    {
-      name: "SURENDAR CHARPE",
-      position: "ACCOUNTS MANAGER",
-      image: "/api/placeholder/300/300",
-      email: "surendar@company.com",
-      phone: "+91 98765 43218"
-    }
-  ];
+const teamMembers = [
+  {
+    name: "ANAND KUMAR",
+    position: "MANAGING DIRECTOR",
+    image: "/api/placeholder/300/300",
+    email: "anand@company.com",
+    phone: "+91 98765 43210"
+  },
+  {
+    name: "DRON SOLANKI",
+    position: "VICE PRESIDENT",
+    image: "/api/placeholder/300/300",
+    email: "dron@company.com",
+    phone: "+91 98765 43213"
+  },
+  {
+    name: "SANDEEP KUMAR",
+    position: "CHIEF EXECUTIVE OFFICER",
+    image: "/api/placeholder/300/300",
+    email: "sandeep@company.com",
+    phone: "+91 98765 43216"
+  },
+  {
+    name: "VIPIN RATHEE",
+    position: "HOD (ADMIN)",
+    image: "/api/placeholder/300/300",
+    email: "vipin@company.com",
+    phone: "+91 98765 43211"
+  },
+  {
+    name: "RAMESH KUMAR",
+    position: "GENERAL MANAGER",
+    image: "/api/placeholder/300/300",
+    email: "ramesh@company.com",
+    phone: "+91 98765 43214"
+  },
+  {
+    name: "SHYAM SINGH",
+    position: "PROJECT MANAGER GGIAL OPERATIONS",
+    image: "/api/placeholder/300/300",
+    email: "shyam@company.com",
+    phone: "+91 98765 43217"
+  },
+  {
+    name: "HEMANT KUMAR",
+    position: "P.R.O.",
+    image: "/api/placeholder/300/300",
+    email: "hemant@company.com",
+    phone: "+91 98765 43212"
+  },
+  {
+    name: "ROBIN MISHRA",
+    position: "OPERATION & MAINTENANCE MANAGER",
+    image: "/api/placeholder/300/300",
+    email: "robin@company.com",
+    phone: "+91 98765 43215"
+  },
+  {
+    name: "PRADEEP JHA",
+    position: "EXECUTIVE MANAGER",
+    image: "/api/placeholder/300/300",
+    email: "pradeep@company.com",
+    phone: "+91 98765 43218"
+  }
+];
+
 
   const stats = [
     { icon: Users, label: "Team Members", value: "50+" },
