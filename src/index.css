@@ -17,6 +17,10 @@ html{
   overflow-x: hidden;
 }
 
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
 
 .blog ul{
     list-style: disc !important;

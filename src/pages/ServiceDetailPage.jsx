@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import services from '../data/ServiceData';
 import Breadcrumb from '../components/Breadcrumb';
+import VisionMission from '../components/VisionMission';
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -258,7 +259,9 @@ export default function ServiceDetail() {
             </div>
           </div>
         </div>
+        
       </div>
+      <VisionMission/>
     </div>
     </>
   );

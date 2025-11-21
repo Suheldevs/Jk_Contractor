@@ -59,12 +59,13 @@ const Header = () => {
     },
     {
       name: 'About',
-      path: '/about',
+      path: '/about/overview',
       icon: <Info size={18} />,
       hasDropdown: true,
       dropdownItems: [
         { name: 'Company Overview', path: '/about/overview' },
         { name: 'Leadership Team', path: '/about/team' },
+        { name: 'Vision Mission', path: '/about/vision-mission' },
         { name: 'Certification', path: '/about/certification' },
       ],
     },
@@ -87,7 +88,7 @@ services.map((item)=>{
     },
     {
       name: 'More',
-      path: '/more',
+      path: '/gallery',
       icon: <MapPin size={18} />,
       hasDropdown: true,
       dropdownItems: [
@@ -111,29 +112,7 @@ services.map((item)=>{
             {/* Logo Section */}
             <div className="flex-shrink-0 group">
               <a href="/" className="flex items-center space-x-3">
-                <div className={`relative w-12 h-12 rounded-2xl transition-all duration-300 ${
-                  scrolled 
-                    ? 'bg-gradient-to-br from-red-600 to-red-600 shadow-lg shadow-red-500/25' 
-                    : 'bg-gradient-to-br from-red-600 to-red-600'
-                } group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-red-500/40`}>
-                  <div className="absolute inset-0 rounded-2xl bg-white/20 backdrop-blur-sm" />
-                  <div className="relative flex items-center justify-center w-full h-full text-white font-bold text-lg">
-                    JK
-                  </div>
-                  <div className="absolute inset-0 rounded-2xl border border-white/30" />
-                </div>
-                <div className="block">
-                  <div className={`font-bold lg:text-xl  transition-colors duration-300 ${
-                    scrolled ? 'text-slate-100' : 'text-white'
-                  }`}>
-                    JKContractor
-                  </div>
-                  <div className={`text-xs font-medium transition-colors duration-300 ${
-                    scrolled ? 'text-slate-200' : 'text-red-200'
-                  }`}>
-                    Building Excellence
-                  </div>
-                </div>
+                <img src='/logo-red-bg.png' className='h-16'/>
               </a>
             </div>
             
@@ -142,7 +121,7 @@ services.map((item)=>{
               {navItems.map((item) => (
                 <div key={item.name} className="relative group">
                   {item.hasDropdown ? (
-                    <button className={`flex items-center px-4 py-2.5 rounded-xl transition-all duration-300 ${
+                    <Link  to={item.path} className={`flex items-center px-4 py-2.5 rounded-xl transition-all duration-300 ${
                       scrolled 
                         ? 'text-slate-100 hover:bg-slate-100 hover:text-slate-900' 
                         : 'text-white hover:bg-white/10 hover:backdrop-blur-sm'
@@ -150,7 +129,7 @@ services.map((item)=>{
                       <span className="mr-2">{item.icon}</span>
                       <span className="font-medium">{item.name}</span>
                       <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
-                    </button>
+                    </Link>
                   ) : (
                     <Link to={item.path} className={`flex items-center px-4 py-2.5 rounded-xl transition-all duration-300 ${
                       scrolled 

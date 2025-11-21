@@ -17,6 +17,8 @@ import ServiceDetail from './pages/ServiceDetailPage'
 import ScrollToTop from './components/ScrollToTop'
 import TeamPage from './pages/TeamPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+import Service from './pages/Service'
+import VisionMisionPage from './pages/VisionMisionPage'
 
 
 export default function App() {
@@ -35,9 +37,11 @@ export default function App() {
       <Route path='/project' element={<ProjectPage/>}/>
       <Route path='/vehicles' element={<VehiclesEquipmentPage/>}/>
       <Route path='/gallery' element={<Gallery/>}/>
+      <Route path='/services' element={<Service/>}/>
       <Route path='/services/:slug' element={<ServiceDetail/>}/>
       <Route path='/about/team' element={<TeamPage/>}/>
       <Route path='/privacy-policy' element={<PrivacyPolicyPage/>}/>
+      <Route path='/about/vision-mission' element={<VisionMisionPage/>}/>
     </Routes>
     <Footer/>
     </>

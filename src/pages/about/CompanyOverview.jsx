@@ -17,6 +17,7 @@ import {
   Coffee
 } from 'lucide-react';
 import Breadcrumb from '../../components/Breadcrumb';
+import VisionMission from '../../components/VisionMission';
 
 const CompanyOverview = () => {
   const highlights = [
@@ -161,7 +162,7 @@ const CompanyOverview = () => {
             </div>
           </div>
         </div>
-
+<VisionMission/>
         {/* Services Grid */}
         <div className="mb-16">
           <h2 className="text-4xl font-bold play text-gray-800 text-center mb-12">Our Core Services</h2>

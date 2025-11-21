@@ -8,12 +8,14 @@ import TestimonialSection from '../components/TestimonialSection'
 import Footer from '../components/Footer'
 import WhyChooseUs from '../components/WhyChooseUs'
 import BlogSection from '../components/BlogSection'
+import VisionMission from '../components/VisionMission'
 
 export default function Home() {
   return (
     <>
     <HeroSection/>
     <AboutSection/>
+    <VisionMission/>
     <ServicesSection/>
     <WhyChooseUs/>
     <ProjectsSection/>
