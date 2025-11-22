@@ -1,6 +1,6 @@
 export default function VisionMission() {
   return (
-    <section className="w-full bg-gradient-to-b from-[#f5f5f5] to-white py-10 px-12">
+    <section className="w-full max-w-7xl mx-auto bg-gradient-to-b from-[#f5f5f5] to-white py-10 px-4">
       
       {/* 2-Column Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -11,7 +11,7 @@ export default function VisionMission() {
             VISION
           </h2>
 
-          <p className="text-gray-700 leading-relaxed text-[15px]">
+          <p className="text-gray-700 leading-relaxed text-lg">
             Our vision is to be the premier multi-service provider, setting new
             benchmarks in operational efficiency, sustainability, and customer
             satisfaction. We aim to revolutionize the service industry by
@@ -22,7 +22,7 @@ export default function VisionMission() {
             high-traffic infrastructures.
           </p>
 
-          <ul className="mt-4 space-y-2 text-gray-700 text-[15px]">
+          <ul className="mt-4 space-y-2 text-gray-700 text-lg">
             <li>
               <span className="font-semibold">Waste Management Policy:</span>{" "}
               We prioritize eco-friendly disposal using segregation, recycling,
@@ -50,13 +50,13 @@ export default function VisionMission() {
             MISSION
           </h2>
 
-          <p className="text-gray-700 leading-relaxed text-[15px]">
+          <p className="text-gray-700 leading-relaxed text-lg">
             Our mission is to deliver superior, innovative, and sustainable
             solutions that enhance operational performance, improve customer
             experiences, and contribute to environmental well-being.
           </p>
 
-          <ul className="mt-4 space-y-3 text-gray-700 text-[15px]">
+          <ul className="mt-4 space-y-3 text-gray-700 text-lg">
             <li>
               <span className="font-semibold">Providing Excellence:</span>{" "}
               Ensuring high-quality service delivery across all business segments.

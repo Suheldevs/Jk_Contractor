@@ -46,7 +46,7 @@ const VehiclesEquipmentPage = () => {
         features: 'AC, GPS Navigation, Safety Features'
       },
       uses: ['Executive Transport', 'Supervisory Operations', 'Airport Transfers'],
-      image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=250&fit=crop',
+    "image": "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Safari/12798/1755865650056/front-left-side-47.jpg?imwidth=890&impolicy=resize",
       status: 'Active',
       quantity: 3
     },
@@ -63,7 +63,7 @@ const VehiclesEquipmentPage = () => {
         features: 'AC, Power Steering, Central Locking'
       },
       uses: ['Staff Transportation', 'Light Cargo', 'Multi-utility Operations'],
-      image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400&h=250&fit=crop',
+      image: 'https://stimg.cardekho.com/images/carexteriorimages/930x620/Mahindra/Marazzo/10757/1758198958040/front-left-side-47.jpg',
       status: 'Active',
       quantity: 4
     },
@@ -80,7 +80,7 @@ const VehiclesEquipmentPage = () => {
         features: 'AC, Music System, Safety Features'
       },
       uses: ['Passenger Transport', 'Light Duty Operations', 'Airport Connectivity'],
-      image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=400&h=250&fit=crop',
+      image: 'https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Ertiga/10288/1755776579514/front-left-side-47.jpg',
       status: 'Active',
       quantity: 5
     },
@@ -97,7 +97,7 @@ const VehiclesEquipmentPage = () => {
         features: 'SmartPlay Infotainment, AC, ABS'
       },
       uses: ['Quick Response', 'Urban Mobility', 'Inspection Rounds'],
-      image: 'https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=400&h=250&fit=crop',
+      image: 'https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Brezza/10387/1755776307393/front-left-side-47.jpg',
       status: 'Active',
       quantity: 3
     },
@@ -115,7 +115,7 @@ const VehiclesEquipmentPage = () => {
         features: '4WD Option, High Ground Clearance'
       },
       uses: ['Staff Movement', 'Maintenance Tasks', 'Rough Terrain Operations'],
-      image: 'https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=250&fit=crop',
+      image: 'https://stimg.cardekho.com/images/carexteriorimages/930x620/Mahindra/Bolero/10754/1761635045988/front-left-side-47.jpg',
       status: 'Active',
       quantity: 6
     },
@@ -132,7 +132,7 @@ const VehiclesEquipmentPage = () => {
         features: '4WD, High Ground Clearance'
       },
       uses: ['Security Patrol', 'Off-Road Operations', 'Emergency Response'],
-      image: 'https://images.unsplash.com/photo-1558618666-fbcd29c91cd4?w=400&h=250&fit=crop',
+      image: 'https://th.bing.com/th/id/OIP.hjmZ2fGlxMfSfwJ1JALCVwHaEK?w=303&h=180&c=7&r=0&o=7&pid=1.7&rm=3',
       status: 'Active',
       quantity: 4
     },
@@ -166,7 +166,7 @@ const VehiclesEquipmentPage = () => {
         features: 'High-Pressure Pumps, Distribution System'
       },
       uses: ['Water Supply', 'Cleaning Operations', 'Fire Safety Support'],
-      image: 'https://images.unsplash.com/photo-1562620669-1a092d969e27?w=400&h=250&fit=crop',
+      image: 'https://th.bing.com/th/id/OIP.3w1mpwdXX235dcWqgk-R8AHaFI?w=253&h=180&c=7&r=0&o=7&pid=1.7&rm=3',
       status: 'Active',
       quantity: 6
     },
@@ -183,7 +183,7 @@ const VehiclesEquipmentPage = () => {
         features: 'Telescopic Boom, Outriggers'
       },
       uses: ['Heavy Lifting', 'Infrastructure Maintenance', 'Emergency Recovery'],
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=250&fit=crop',
+      image: 'https://th.bing.com/th/id/OIP.43vKfdy-gOOQhrUZiBCEXwAAAA?w=278&h=186&c=7&r=0&o=7&pid=1.7&rm=3',
       status: 'Active',
       quantity: 4
     },
@@ -201,7 +201,7 @@ const VehiclesEquipmentPage = () => {
         features: 'HEPA Filters, Multiple Attachments'
       },
       uses: ['Terminal Cleaning', 'Deep Cleaning', 'Carpet Maintenance'],
-      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=250&fit=crop',
+      image: 'https://th.bing.com/th/id/OIP.ECZM7JOzSe1GfJKMe-AskgHaHa?w=206&h=206&c=7&r=0&o=7&pid=1.7&rm=3',
       status: 'Active',
       quantity: 25
     },
@@ -218,7 +218,7 @@ const VehiclesEquipmentPage = () => {
         features: 'Auto-dosing, Edge Cleaning'
       },
       uses: ['Floor Scrubbing', 'Terminal Maintenance', 'Large Area Cleaning'],
-      image: 'https://images.unsplash.com/photo-1581822261290-991b38693d1b?w=400&h=250&fit=crop',
+      image: 'https://th.bing.com/th/id/OIP.W7McihAp0gTHdjn8TI-0HAHaHa?w=274&h=206&c=7&r=0&o=7&pid=1.7&rm=3',
       status: 'Active',
       quantity: 15
     },
@@ -235,7 +235,7 @@ const VehiclesEquipmentPage = () => {
         features: 'Auto Fill, Remote Control'
       },
       uses: ['Canteen Cooling', 'Public Zone Comfort', 'Temporary Cooling'],
-      image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=400&h=250&fit=crop',
+      image: 'https://th.bing.com/th/id/OIP.VbxGFDvbRWF1NSfc8zgk4wHaGq?w=169&h=150&c=6&o=7&pid=1.7&rm=3',
       status: 'Active',
       quantity: 20
     },
@@ -253,7 +253,7 @@ const VehiclesEquipmentPage = () => {
         features: 'Dust Control, Side Brushes'
       },
       uses: ['Terminal Cleaning', 'Walkway Maintenance', 'Indoor Sweeping'],
-      image: 'https://images.unsplash.com/photo-1534777416978-b3f5ea36f1b8?w=400&h=250&fit=crop',
+      image: 'https://th.bing.com/th/id/OIP.UzRcti1Ih7KkJheFSPdCrQHaGc?w=214&h=187&c=7&r=0&o=7&pid=1.7&rm=3',
       status: 'Active',
       quantity: 8
     },
@@ -270,7 +270,7 @@ const VehiclesEquipmentPage = () => {
         features: 'Water Spray System, High Suction'
       },
       uses: ['Runway Cleaning', 'Road Sweeping', 'Large Area Maintenance'],
-      image: 'https://images.unsplash.com/photo-1569292354848-ac28a2e6de50?w=400&h=250&fit=crop',
+      image: 'https://th.bing.com/th/id/OIP.dZPRfmbPX2_RGNV2tOK9hQHaDt?w=338&h=174&c=7&r=0&o=7&pid=1.7&rm=3',
       status: 'Active',
       quantity: 6
     },
@@ -287,7 +287,7 @@ const VehiclesEquipmentPage = () => {
         features: 'HEPA Filtration, Auto-discharge'
       },
       uses: ['FOD Removal', 'Deep Cleaning', 'Debris Collection'],
-      image: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=250&fit=crop',
+      image: 'https://th.bing.com/th/id/OIP.RNuUeCFW9TtdMotoh_8yOAHaHa?w=200&h=200&c=7&r=0&o=7&pid=1.7&rm=3',
       status: 'Active',
       quantity: 10
     }
@@ -456,7 +456,7 @@ const VehiclesEquipmentPage = () => {
               <img 
                 src={selectedVehicle.image} 
                 alt={selectedVehicle.name}
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-contain"
               />
               <button 
                 onClick={() => setSelectedVehicle(null)}

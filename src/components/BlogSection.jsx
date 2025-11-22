@@ -158,7 +158,7 @@ export default function BlogSection() {
                 transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)`
               }}
             >
-              {Array.isArray(blogData) && blogData?.map(post => (
+              {Array.isArray(blogData) && [...blogData]?.reverse().map(post => (
                 <div 
                   key={post._id} 
                   className="flex-shrink-0 px-3"

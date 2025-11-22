@@ -115,7 +115,7 @@ const ProjectPage = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projectData?.map((project) => (
+          {[...projectData]?.reverse().map((project) => (
             <div 
               key={project.id} 
               className="group relative bg-gray-100 rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
@@ -139,7 +139,7 @@ const ProjectPage = () => {
                 </div>
                 
                 {/* Category Badge */}
-                <div className="absolute top-4 left-4 bg-red-600 text-white text-xs px-2 py-1 rounded">
+                <div className="absolute capitalize top-4 left-4 bg-red-600 text-white text-xs px-2 py-1 rounded">
                   {project.category}
                 </div>
               </div>

@@ -99,7 +99,7 @@ export default function Gallery() {
         <div className="max-w-7xl mx-auto">
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {galleryData?.map((image, index) => (
+            {[...galleryData]?.reverse()?.map((image, index) => (
               <div
                 key={image.id}
                 className="relative overflow-hidden  shadow-lg group cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"

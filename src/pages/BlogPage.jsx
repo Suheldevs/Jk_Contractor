@@ -18,6 +18,7 @@ export default function BlogPage() {
  if (status == "loading") {
     return (
       <>
+       <div className='h-20 bg-black w-full'></div>
         <div className="text-xl h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
           Loading..
         </div>
@@ -28,6 +29,7 @@ export default function BlogPage() {
   if (blogData?.length == 0) {
     return (
       <>
+       <div className='h-20 bg-black w-full'></div>
         <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
           Blog Data Not Found!
         </div>
@@ -37,6 +39,7 @@ export default function BlogPage() {
   if (error) {
     return (
       <>
+       <div className='h-20 bg-black w-full'></div>
         <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
           {error}
         </div>
@@ -72,8 +75,8 @@ export default function BlogPage() {
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-gray-50">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {Array.isArray(blogData) && blogData?.map(post => (
-                    <div key={post.id} className="px-3">
+        {Array.isArray(blogData) && [...blogData]?.reverse().map(post => (
+                    <div key={post._id} className="px-3">
                       <div className="bg-white aspect-square flex flex-col overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200">
                         {/* Image section */}
                         <div className="h-1/2 overflow-hidden">

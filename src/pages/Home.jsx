@@ -9,6 +9,7 @@ import Footer from '../components/Footer'
 import WhyChooseUs from '../components/WhyChooseUs'
 import BlogSection from '../components/BlogSection'
 import VisionMission from '../components/VisionMission'
+import Service from './Service'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
     <AboutSection/>
     <VisionMission/>
     <ServicesSection/>
+    {/* <Service bg={true}/> */}
     <WhyChooseUs/>
     <ProjectsSection/>
     <ClientCarousel/>

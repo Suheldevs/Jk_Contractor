@@ -269,8 +269,9 @@
     id: 7,
     title: 'Other Services',
     slug: 'other-services',
-    description:
-      'We provide a variety of customized support services tailored to meet unique operational requirements. From staffing and specialized vehicles to barricading, demolition, and road safety solutions — we cover the end-to-end needs of complex infrastructure and airport environments.',
+  description:
+  'We deliver a range of specialized operational services including towaway crane operations, bio-gas plant support, canteen and food outlet management, horticulture maintenance, and barricading or demolition work. These solutions strengthen airport and facility operations by improving safety, sustainability, and on-ground efficiency.',
+
     icon: <Settings size={24} />,
     image: 'https://cdn.pixabay.com/photo/2015/12/23/18/32/airport-1105980_640.jpg',
     // images: [
