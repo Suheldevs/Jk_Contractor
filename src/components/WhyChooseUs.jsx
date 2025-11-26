@@ -39,12 +39,12 @@ const WhyChooseUs = () => {
           <div className="grid lg:grid-cols-2">
             
             {/* Left Content Section */}
-            <div className="p-6 lg:p-12 bg-gradient-to-br from-red-600 to-red-700 text-white">
+            <div className="p-6 lg:p-12 bg-gradient-to-br from-green-600 to-green-700 text-white">
               <div className="mb-8">
                 <h3 className="text-3xl play lg:text-4xl font-bold mb-4">
                   Why Choose JK Construction?
                 </h3>
-                <p className="text-red-100 text-lg leading-relaxed">
+                <p className="text-green-100 text-lg leading-relaxed">
                   We deliver more than just construction services - we provide comprehensive solutions 
                   designed to exceed expectations, ensure safety, and build lasting relationships.
                 </p>
@@ -59,14 +59,14 @@ const WhyChooseUs = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">{feature.title}</h4>
-                      <p className="text-red-100 text-sm">{feature.description}</p>
+                      <p className="text-green-100 text-sm">{feature.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* CTA Button */}
-              <Link to='/contact' className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center">
+              <Link to='/contact' className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center">
                 <CheckCircle className="w-5 h-5 mr-2" />
                 Get Free Consultation
               </Link>

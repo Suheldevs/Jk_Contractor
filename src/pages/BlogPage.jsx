@@ -30,7 +30,7 @@ export default function BlogPage() {
     return (
       <>
        <div className='h-20 bg-black w-full'></div>
-        <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+        <div className="text-green-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
           Blog Data Not Found!
         </div>
       </>
@@ -40,7 +40,7 @@ export default function BlogPage() {
     return (
       <>
        <div className='h-20 bg-black w-full'></div>
-        <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+        <div className="text-green-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
           {error}
         </div>
       </>

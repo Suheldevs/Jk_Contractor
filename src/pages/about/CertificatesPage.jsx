@@ -44,7 +44,7 @@ const CertificatesPage = () => {
       category: "Security Clearance",
       issueDate: "2023",
       validUntil: "2025",
-      color: "bg-red-500",
+      color: "bg-green-500",
       status: "Active"
     },
     {
@@ -68,7 +68,7 @@ const CertificatesPage = () => {
       category: "Aviation Authority",
       issueDate: "2022",
       validUntil: "2027",
-      color: "bg-red-600",
+      color: "bg-green-600",
       status: "Active"
     },
     {
@@ -108,7 +108,7 @@ const CertificatesPage = () => {
       title: "Safety Policy",
       description: "Ensuring safe working environment through adherence to safety protocols and risk prevention.",
       icon: Shield,
-      color: "text-red-600"
+      color: "text-green-600"
     },
     {
       title: "Quality Assurance Policy",
@@ -133,19 +133,19 @@ const CertificatesPage = () => {
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-red-600 mb-2">6+</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">6+</div>
               <div className="text-gray-600">Active Certifications</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-red-600 mb-2">17+</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">17+</div>
               <div className="text-gray-600">Years of Compliance</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-red-600 mb-2">100%</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
               <div className="text-gray-600">Regulatory Adherence</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-red-600 mb-2">3</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">3</div>
               <div className="text-gray-600">Core Policies</div>
             </div>
           </div>
@@ -179,10 +179,10 @@ const CertificatesPage = () => {
                 </div>
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
                 {cert.title}
               </h3>
-              <p className="text-sm text-red-600 font-medium mb-3">{cert.subtitle}</p>
+              <p className="text-sm text-green-600 font-medium mb-3">{cert.subtitle}</p>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
                 {cert.description}
               </p>
@@ -192,7 +192,7 @@ const CertificatesPage = () => {
                   <span className="text-gray-500">Valid Until: </span>
                   <span className="font-medium text-gray-900">{cert.validUntil}</span>
                 </div>
-                <div className="flex items-center gap-2 text-red-600 group-hover:text-red-700 transition-colors">
+                <div className="flex items-center gap-2 text-green-600 group-hover:text-green-700 transition-colors">
                   <Eye className="w-4 h-4" />
                   <span className="font-medium">View Details</span>
                 </div>
@@ -224,9 +224,9 @@ const CertificatesPage = () => {
         </div>
 
         {/* Achievement Highlight */}
-        <div className="mt-16 bg-gradient-to-r from-red-50 to-red-100 rounded-3xl p-8 border border-red-200">
+        <div className="mt-16 bg-gradient-to-r from-green-50 to-green-100 rounded-3xl p-8 border border-green-200">
           <div className="flex items-center gap-6">
-            <div className="w-20 h-20 bg-red-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+            <div className="w-20 h-20 bg-green-500 rounded-2xl flex items-center justify-center flex-shrink-0">
               <Star className="w-10 h-10 text-white" />
             </div>
             <div>
@@ -253,7 +253,7 @@ const CertificatesPage = () => {
                   </div>
                   <div>
                     <h2 className="text-2xl font-bold text-gray-900">{selectedCert.title}</h2>
-                    <p className="text-red-600 font-medium">{selectedCert.subtitle}</p>
+                    <p className="text-green-600 font-medium">{selectedCert.subtitle}</p>
                   </div>
                 </div>
                 <button 
@@ -293,7 +293,7 @@ const CertificatesPage = () => {
               </div>
               
               <div className="flex gap-3">
-                <Link to='/contact' className="flex-1 bg-red-600 text-white px-6 py-3 rounded-xl hover:bg-red-700 transition-colors flex items-center justify-center gap-2">
+                <Link to='/contact' className="flex-1 bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition-colors flex items-center justify-center gap-2">
                   <Eye className="w-5 h-5" />
                  Inquire For Certificate Detail
                 </Link>

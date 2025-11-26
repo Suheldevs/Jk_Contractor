@@ -119,7 +119,7 @@ export default function ContactUsPage() {
       />
 
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-red-600 via-red-500 to-orange-500">
+      <div className="relative overflow-hidden bg-gradient-to-r from-green-600 via-green-500 to-orange-500">
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center text-white">
@@ -195,7 +195,7 @@ export default function ContactUsPage() {
           {/* Form */}
           <div className="lg:col-span-2 bg-white rounded-3xl shadow-2xl p-8 lg:p-12 relative overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-red-100 to-orange-100 rounded-full transform translate-x-20 -translate-y-20 opacity-50"></div>
+            <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-green-100 to-orange-100 rounded-full transform translate-x-20 -translate-y-20 opacity-50"></div>
             <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-100 to-purple-100 rounded-full transform -translate-x-16 translate-y-16 opacity-50"></div>
             
             <div className="relative z-10">
@@ -221,7 +221,7 @@ export default function ContactUsPage() {
                   </p>
                   <button
                     onClick={() => setFormStatus({ submitted: false, loading: false })}
-                    className="group flex items-center px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl font-medium hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    className="group flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                   >
                     Send Another Message
                     <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -230,7 +230,7 @@ export default function ContactUsPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {error && (
-                    <div className="bg-red-50 border border-red-200 text-red-600 px-6 py-4 rounded-xl text-center font-medium">
+                    <div className="bg-green-50 border border-green-200 text-green-600 px-6 py-4 rounded-xl text-center font-medium">
                       {error}
                     </div>
                   )}
@@ -246,7 +246,7 @@ export default function ContactUsPage() {
                         name="name"
                         value={formState.name}
                         onChange={handleChange}
-                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-4 focus:ring-red-100 focus:border-red-400 transition-all duration-300 group-hover:border-gray-300"
+                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-4 focus:ring-green-100 focus:border-green-400 transition-all duration-300 group-hover:border-gray-300"
                         placeholder="Enter your full name"
                         required
                       />
@@ -262,7 +262,7 @@ export default function ContactUsPage() {
                         name="email"
                         value={formState.email}
                         onChange={handleChange}
-                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-4 focus:ring-red-100 focus:border-red-400 transition-all duration-300 group-hover:border-gray-300"
+                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-4 focus:ring-green-100 focus:border-green-400 transition-all duration-300 group-hover:border-gray-300"
                         placeholder="your.email@example.com"
                         required
                       />
@@ -285,7 +285,7 @@ export default function ContactUsPage() {
                         maxLength="10"
                         value={formState.phone}
                         onChange={handleChange}
-                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-4 focus:ring-red-100 focus:border-red-400 transition-all duration-300 group-hover:border-gray-300"
+                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-4 focus:ring-green-100 focus:border-green-400 transition-all duration-300 group-hover:border-gray-300"
                         placeholder="Enter 10 digit number"
                       />
                     </div>
@@ -299,7 +299,7 @@ export default function ContactUsPage() {
                         name="service"
                         value={formState.service}
                         onChange={handleChange}
-                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-4 focus:ring-red-100 focus:border-red-400 transition-all duration-300 group-hover:border-gray-300 bg-white"
+                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-4 focus:ring-green-100 focus:border-green-400 transition-all duration-300 group-hover:border-gray-300 bg-white"
                         required
                       >
                         <option value="">Select a Service</option>
@@ -322,7 +322,7 @@ export default function ContactUsPage() {
                       value={formState.message}
                       onChange={handleChange}
                       rows="6"
-                      className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-4 focus:ring-red-100 focus:border-red-400 transition-all duration-300 group-hover:border-gray-300 resize-none"
+                      className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-4 focus:ring-green-100 focus:border-green-400 transition-all duration-300 group-hover:border-gray-300 resize-none"
                       placeholder="Tell us about your project requirements..."
                       required
                     />
@@ -332,7 +332,7 @@ export default function ContactUsPage() {
                     <button
                       disabled={formStatus.loading}
                       type="submit"
-                      className="group w-full flex items-center justify-center px-8 py-5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                      className="group w-full flex items-center justify-center px-8 py-5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                       onMouseEnter={() => setIsHovered(true)}
                       onMouseLeave={() => setIsHovered(false)}
                     >
@@ -389,7 +389,7 @@ export default function ContactUsPage() {
               {/* Map overlay info */}
               <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                 <div className="flex items-center text-gray-800">
-                  <MapPin className="h-5 w-5 text-red-500 mr-2" />
+                  <MapPin className="h-5 w-5 text-green-500 mr-2" />
                   <div>
                     <p className="font-semibold text-sm">JK Contractor</p>
                     <p className="text-xs text-gray-600">Near IGI Airport</p>

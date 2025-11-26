@@ -24,8 +24,8 @@ const AboutSection = () => {
               />
               
               {/* Decorative elements */}
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-red-600 rounded-full opacity-10"></div>
-              <div className="absolute -top-6 -left-6 w-20 h-20 bg-red-600 rounded-full opacity-10"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-green-600 rounded-full opacity-10"></div>
+              <div className="absolute -top-6 -left-6 w-20 h-20 bg-green-600 rounded-full opacity-10"></div>
               
               {/* Stats card */}
               <div className="absolute bottom-2 rounded-lg shadow-xl p-4 w-fit">
@@ -39,7 +39,7 @@ const AboutSection = () => {
               </div>
               
               {/* Accent border */}
-              <div className="absolute inset-0 border-4 border-red-600/20 rounded-xl transform translate-x-4 translate-y-4 -z-10"></div>
+              <div className="absolute inset-0 border-4 border-green-600/20 rounded-xl transform translate-x-4 translate-y-4 -z-10"></div>
             </div>
           </div>
           
@@ -47,13 +47,13 @@ const AboutSection = () => {
           <div className="w-full md:w-1/2">
             <div className="max-w-lg">
               {/* Section label */}
-              <div className="inline-flex  items-center px-3 py-1 rounded-full bg-red-50 text-red-600 font-medium text-sm mb-4">
+              <div className="inline-flex  items-center px-3 py-1 rounded-full bg-green-50 text-green-600 font-medium text-sm mb-4">
                 ABOUT JK CONTRACTOR
               </div>
               
               {/* Heading */}
               <h2 className="text-3xl play sm:text-4xl font-bold text-gray-900 mb-6">
-                We're Redefining <span className="text-red-600">Airport Services</span> with Excellence
+                We're Redefining <span className="text-green-600">Airport Services</span> with Excellence
               </h2>
               
               {/* Description */}
@@ -68,8 +68,8 @@ const AboutSection = () => {
               {/* Features grid */}
               {/* <div className="grid grid-cols-2 gap-6 mb-10">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center mr-3">
-                    <Shield className="w-5 h-5 text-red-600" />
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center mr-3">
+                    <Shield className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Safety First</h3>
@@ -78,8 +78,8 @@ const AboutSection = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center mr-3">
-                    <Leaf className="w-5 h-5 text-red-600" />
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center mr-3">
+                    <Leaf className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Sustainability</h3>
@@ -88,8 +88,8 @@ const AboutSection = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center mr-3">
-                    <Award className="w-5 h-5 text-red-600" />
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center mr-3">
+                    <Award className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Certified Quality</h3>
@@ -98,10 +98,10 @@ const AboutSection = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center mr-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center mr-3">
                     <div className="w-5 h-5 relative">
-                      <div className="absolute inset-0 bg-red-600 rounded-full opacity-20 animate-ping"></div>
-                      <div className="absolute inset-0 bg-red-600 rounded-full"></div>
+                      <div className="absolute inset-0 bg-green-600 rounded-full opacity-20 animate-ping"></div>
+                      <div className="absolute inset-0 bg-green-600 rounded-full"></div>
                     </div>
                   </div>
                   <div>
@@ -113,7 +113,7 @@ const AboutSection = () => {
               
               {/* CTA buttons */}
               <div className="flex flex-wrap gap-4">
-                <Link to='/about/overview' className="group relative inline-flex items-center justify-center px-6 py-3 bg-red-600 text-white font-medium rounded-lg overflow-hidden transition-all hover:bg-red-700">
+                <Link to='/about/overview' className="group relative inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg overflow-hidden transition-all hover:bg-green-700">
                   <span className="absolute inset-0 w-full h-full bg-white/10 blur-xl group-hover:blur-md transition-all duration-300 opacity-0 group-hover:opacity-100"></span>
                   <span className="relative flex items-center">
                     Learn More

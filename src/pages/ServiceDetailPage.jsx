@@ -34,7 +34,7 @@ export default function ServiceDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
           <p className="text-xl font-medium text-gray-600">Loading service details...</p>
         </div>
       </div>
@@ -70,7 +70,7 @@ export default function ServiceDetail() {
             " {service.description} "
 
             {/* <div className='mt-10'>
-                <button className='bg-red-600 text-white rounded-md px-6 py-3'>Learn more</button>
+                <button className='bg-green-600 text-white rounded-md px-6 py-3'>Learn more</button>
             </div> */}
           </p>
         </div>
@@ -110,8 +110,8 @@ export default function ServiceDetail() {
                   onClick={() => setActiveTab(tab)}
                   className={`px-6 py-3 font-semibold rounded-t-lg transition-all duration-300 ${
                     activeTab === tab 
-                      ? 'bg-red-600 text-white' 
-                      : 'text-gray-600 hover:text-red-600 hover:bg-red-50'
+                      ? 'bg-green-600 text-white' 
+                      : 'text-gray-600 hover:text-green-600 hover:bg-green-50'
                   }`}
                 >
                   {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -127,7 +127,7 @@ export default function ServiceDetail() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     {service.features.map((feature, index) => (
                       <div key={index} className="flex items-start gap-3 p-4 bg-green-50 rounded-xl">
-                        <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                           <Check className="w-4 h-4 text-white" />
                         </div>
                         <span className="text-gray-700 font-medium">{feature}</span>
@@ -161,7 +161,7 @@ export default function ServiceDetail() {
                   <div className="space-y-6">
                     {service.steps.map((step, index) => (
                       <div key={index} className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                        <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                           {index + 1}
                         </div>
                         <div className="flex-1 pt-2">
@@ -207,10 +207,10 @@ export default function ServiceDetail() {
             <div className="sticky top-8 space-y-8">
               
               {/* CTA Card */}
-              <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-8 text-white">
+              <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-                <p className="text-red-100 mb-6">Contact us today for a free consultation and quote.</p>
-                <Link to='/contact' className="w-full bg-white text-red-600 font-semibold py-3 px-6 rounded-xl hover:bg-gray-100 transition-colors duration-300">
+                <p className="text-green-100 mb-6">Contact us today for a free consultation and quote.</p>
+                <Link to='/contact' className="w-full bg-white text-green-600 font-semibold py-3 px-6 rounded-xl hover:bg-gray-100 transition-colors duration-300">
                   Contact Us
                 </Link>
               </div>
@@ -248,7 +248,7 @@ export default function ServiceDetail() {
                         <div className={`p-2 rounded-lg ${relatedService.color}`}>
                           {relatedService.icon}
                         </div>
-                        <span className="font-medium group-hover:text-red-600 transition-colors duration-300">
+                        <span className="font-medium group-hover:text-green-600 transition-colors duration-300">
                           {relatedService.title}
                         </span>
                       </div>

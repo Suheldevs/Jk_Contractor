@@ -45,7 +45,7 @@ const CompanyOverview = () => {
 
   const services = [
     { icon: Recycle, name: "Waste Management", color: "text-green-600" },
-    { icon: Building2, name: "Housekeeping & Facility Management", color: "text-red-600" },
+    { icon: Building2, name: "Housekeeping & Facility Management", color: "text-green-600" },
     { icon: Truck, name: "Sweeping Machines & Cleaning", color: "text-purple-600" },
     { icon: Users, name: "Manpower Solutions", color: "text-orange-600" },
     { icon: TreePine, name: "Horticulture Services", color: "text-emerald-600" },
@@ -61,22 +61,22 @@ const CompanyOverview = () => {
       />
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
-      {/* <div className="relative overflow-hidden bg-gradient-to-r from-red-900 via-red-900 to-purple-900">
+      {/* <div className="relative overflow-hidden bg-gradient-to-r from-green-900 via-green-900 to-purple-900">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-6 py-16">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-white mb-4">
               JK CONTRACTOR
             </h1>
-            <div className="flex items-center justify-center gap-2 text-red-200 mb-6">
+            <div className="flex items-center justify-center gap-2 text-green-200 mb-6">
               <MapPin className="w-5 h-5" />
               <p className="text-lg">306, Shahbad Mohd. Pur, Near IGI Airport, New Delhi</p>
             </div>
-            <div className="flex items-center justify-center gap-2 text-red-200 mb-8">
+            <div className="flex items-center justify-center gap-2 text-green-200 mb-8">
               <Mail className="w-5 h-5" />
               <p className="text-lg">jkcontractor786@gmail.com</p>
             </div>
-            <p className="text-xl text-red-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-green-100 max-w-4xl mx-auto leading-relaxed">
               Professionally managed, multi-certified service provider specializing in 
               environmental sustainability, safety, and operational efficiency in the aviation sector
             </p>
@@ -89,7 +89,7 @@ const CompanyOverview = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {highlights.map((item, index) => (
             <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl mb-4 mx-auto">
+              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl mb-4 mx-auto">
                 <item.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-800 text-center mb-2">{item.title}</h3>
@@ -125,38 +125,38 @@ const CompanyOverview = () => {
                 <CheckCircle className="w-5 h-5" />
                 <span className="font-semibold">ISO 14001:2015 Certified</span>
               </div>
-              <div className="flex items-center gap-2 text-red-600">
+              <div className="flex items-center gap-2 text-green-600">
                 <Shield className="w-5 h-5" />
                 <span className="font-semibold">BCAS Certified</span>
               </div>
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-3xl p-8 text-white">
+          <div className="bg-gradient-to-br from-green-600 to-green-700 rounded-3xl p-8 text-white">
             <div className="flex items-center gap-3 mb-6">
               <Star className="w-8 h-8 text-yellow-400" />
               <h3 className="text-2xl font-bold">Our Specialization</h3>
             </div>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Plane className="w-6 h-6 text-red-300 mt-1" />
+                <Plane className="w-6 h-6 text-green-300 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Airport Operations</h4>
-                  <p className="text-red-100 text-sm">Advanced runway sweeping, FOD elimination, and airfield maintenance</p>
+                  <p className="text-green-100 text-sm">Advanced runway sweeping, FOD elimination, and airfield maintenance</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Recycle className="w-6 h-6 text-green-300 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Waste Management</h4>
-                  <p className="text-red-100 text-sm">India's first airport-based MRF with eco-friendly solutions</p>
+                  <p className="text-green-100 text-sm">India's first airport-based MRF with eco-friendly solutions</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Coffee className="w-6 h-6 text-amber-300 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Food & Beverage</h4>
-                  <p className="text-red-100 text-sm">Second Cup coffee franchise operations at airports</p>
+                  <p className="text-green-100 text-sm">Second Cup coffee franchise operations at airports</p>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@ const CompanyOverview = () => {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
                 <Truck className="w-6 h-6 text-white" />
               </div>
               <div>

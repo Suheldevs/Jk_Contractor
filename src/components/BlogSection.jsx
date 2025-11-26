@@ -84,7 +84,7 @@ export default function BlogSection() {
   if (blogData?.length == 0) {
     return (
       <>
-        <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+        <div className="text-green-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
           Blog Data Not Found!
         </div>
       </>
@@ -93,7 +93,7 @@ export default function BlogSection() {
   if (error) {
     return (
       <>
-        <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+        <div className="text-green-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
           {error}
         </div>
       </>
@@ -116,11 +116,11 @@ export default function BlogSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center bg-red-100 px-4 py-2 rounded-full mb-4">
-            <span className="text-red-600 font-semibold text-sm">Latest Insights</span>
+          <div className="inline-flex items-center bg-green-100 px-4 py-2 rounded-full mb-4">
+            <span className="text-green-600 font-semibold text-sm">Latest Insights</span>
           </div>
           <h2 className="text-3xl play lg:text-4xl font-bold text-gray-900 mb-4">
-            <span className='text-red-600'>Our</span> Blog
+            <span className='text-green-600'>Our</span> Blog
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Stay updated with the latest trends, insights, and innovations in infrastructure and environmental services.
@@ -136,18 +136,18 @@ export default function BlogSection() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group hover:bg-red-50 border border-gray-200"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group hover:bg-green-50 border border-gray-200"
             disabled={currentSlide === 0}
           >
-            <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-red-600 transition-colors duration-300" />
+            <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-green-600 transition-colors duration-300" />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group hover:bg-red-50 border border-gray-200"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group hover:bg-green-50 border border-gray-200"
             disabled={currentSlide >= maxSlide}
           >
-            <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-red-600 transition-colors duration-300" />
+            <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-green-600 transition-colors duration-300" />
           </button>
 
           {/* Slider Track */}
@@ -182,14 +182,14 @@ export default function BlogSection() {
                           <Clock className="h-3 w-3 mr-1" />
                           {formateDate(post?.createdAt)}
                         </div>
-                        <div className="inline-flex items-center bg-red-600 px-2 py-1 rounded-sm text-xs font-medium text-white">
+                        <div className="inline-flex items-center bg-green-600 px-2 py-1 rounded-sm text-xs font-medium text-white">
                           <Tag className="h-3 w-3 mr-1" />
                           {post.category}
                         </div>
                       </div>
                       
                       {/* Title */}
-                      <h3 className="font-bold text-lg text-black mb-2 line-clamp-2 group-hover:text-red-600 group-hover:underline transition-colors duration-300">
+                      <h3 className="font-bold text-lg text-black mb-2 line-clamp-2 group-hover:text-green-600 group-hover:underline transition-colors duration-300">
                         {post.title}
                       </h3>
                       
@@ -204,7 +204,7 @@ export default function BlogSection() {
                       <div className="mt-auto">
                         <Link 
                           to={`/blog-detail/${post.slug}`}
-                          className="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-700 transition-colors duration-300 group-hover:translate-x-1"
+                          className="inline-flex items-center text-sm font-medium text-green-600 hover:text-green-700 transition-colors duration-300 group-hover:translate-x-1"
                         >
                           Read More
                           <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
@@ -225,7 +225,7 @@ export default function BlogSection() {
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentSlide === index 
-                    ? 'bg-red-600 w-6' 
+                    ? 'bg-green-600 w-6' 
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
               />

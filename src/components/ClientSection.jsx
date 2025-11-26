@@ -79,12 +79,12 @@ export default function SimpleClientsSection() {
         
         {/* Header Section */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center bg-red-50 text-red-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <div className="inline-flex items-center bg-green-50 text-green-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Star className="w-4 h-4 mr-2" />
             Our Trusted Partners
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Our <span className="text-red-600">Prestigious</span> Clients
+            Our <span className="text-green-600">Prestigious</span> Clients
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Trusted by leading organizations across various sectors
@@ -106,11 +106,11 @@ export default function SimpleClientsSection() {
                 className="flex-shrink-0 px-2 sm:px-3"
                 style={{ width: `${100 / clients.length}%` }}
               >
-                <div className="group bg-white rounded-xl sm:rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-red-200 p-4 sm:p-6 text-center min-h-[140px] sm:min-h-[160px] flex flex-col justify-center">
+                <div className="group bg-white rounded-xl sm:rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-green-200 p-4 sm:p-6 text-center min-h-[140px] sm:min-h-[160px] flex flex-col justify-center">
                   
                   {/* Logo */}
                   <div className="flex items-center justify-center mb-3 sm:mb-4">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                       <span className="text-white font-bold text-sm sm:text-lg">
                         {client.logo}
                       </span>
@@ -118,7 +118,7 @@ export default function SimpleClientsSection() {
                   </div>
                   
                   {/* Company Name */}
-                  <h3 className="font-semibold text-gray-900 text-sm sm:text-base leading-tight group-hover:text-red-600 transition-colors duration-300 line-clamp-2">
+                  <h3 className="font-semibold text-gray-900 text-sm sm:text-base leading-tight group-hover:text-green-600 transition-colors duration-300 line-clamp-2">
                     {client.name}
                   </h3>
                 </div>
@@ -135,8 +135,8 @@ export default function SimpleClientsSection() {
               onClick={() => setCurrentIndex(index * itemsToShow)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 Math.floor(currentIndex / itemsToShow) === index 
-                  ? 'bg-red-600 w-6 sm:w-8' 
-                  : 'bg-gray-300 hover:bg-red-300 w-2'
+                  ? 'bg-green-600 w-6 sm:w-8' 
+                  : 'bg-gray-300 hover:bg-green-300 w-2'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

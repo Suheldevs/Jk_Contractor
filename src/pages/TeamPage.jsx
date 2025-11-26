@@ -111,16 +111,16 @@ const TeamPage = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
                       {member.name}
                     </h3>
-                    <p className="text-red-600 font-semibold mb-4 text-sm">
+                    <p className="text-green-600 font-semibold mb-4 text-sm">
                       {member.position}
                     </p>
 
                     {/* <div className="space-y-3">
-                    <div className="flex items-center text-gray-600 hover:text-red-600 transition-colors">
+                    <div className="flex items-center text-gray-600 hover:text-green-600 transition-colors">
                       <Mail className="w-4 h-4 mr-3 flex-shrink-0" />
                       <span className="text-sm">{member.email}</span>
                     </div>
-                    <div className="flex items-center text-gray-600 hover:text-red-600 transition-colors">
+                    <div className="flex items-center text-gray-600 hover:text-green-600 transition-colors">
                       <Phone className="w-4 h-4 mr-3 flex-shrink-0" />
                       <span className="text-sm">{member.phone}</span>
                     </div>

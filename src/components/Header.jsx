@@ -112,7 +112,7 @@ services.map((item)=>{
             {/* Logo Section */}
             <div className="flex-shrink-0 group">
               <a href="/" className="flex items-center space-x-3">
-                <img src='/logo-red-bg.png' className='h-16'/>
+                <img src='/logo-green-bg.png' className='h-16'/>
               </a>
             </div>
             
@@ -150,9 +150,9 @@ services.map((item)=>{
                             <Link
                               key={dropdown.name}
                               to={dropdown.path}
-                              className="flex items-center px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-red-50 hover:text-red-600 transition-all duration-200"
+                              className="flex items-center px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-green-50 hover:to-green-50 hover:text-green-600 transition-all duration-200"
                             >
-                              {dropdown.icon && <span className="mr-3 text-red-500">{dropdown.icon}</span>}
+                              {dropdown.icon && <span className="mr-3 text-green-500">{dropdown.icon}</span>}
                               <span className="font-medium">{dropdown.name}</span>
                             </Link>
                           ))}
@@ -170,14 +170,14 @@ services.map((item)=>{
               <div className="hidden md:block">
                 <Link to="/contact" className={`group block relative overflow-hidden px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
                   scrolled 
-                    ? 'bg-gradient-to-r from-red-500 to-red-500 text-white shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40' 
+                    ? 'bg-gradient-to-r from-green-500 to-green-500 text-white shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40' 
                     : 'bg-white/10 backdrop-blur-sm text-white border border-white/30 hover:bg-white/20'
                 }`}>
                   <div className="relative flex items-center space-x-2 z-10">
                     <Contact size={18} />
                     <span>Contact Us</span>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Link>
               </div>
 
@@ -210,11 +210,11 @@ services.map((item)=>{
                     {item.hasDropdown ? (
                       <>
                         <button
-                          className="w-full flex items-center justify-between px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-red-50 hover:text-red-600 rounded-xl transition-all duration-200"
+                          className="w-full flex items-center justify-between px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-green-50 hover:to-green-50 hover:text-green-600 rounded-xl transition-all duration-200"
                           onClick={() => toggleDropdown(item.name)}
                         >
                           <div className="flex items-center space-x-3">
-                            <span className="text-red-500">{item.icon}</span>
+                            <span className="text-green-500">{item.icon}</span>
                             <span className="font-medium">{item.name}</span>
                           </div>
                           <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
@@ -228,10 +228,10 @@ services.map((item)=>{
                               <Link
                                 key={dropdown.name}
                                  to={dropdown.path}
-                                className="flex items-center px-4 py-2.5 text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200"
+                                className="flex items-center px-4 py-2.5 text-slate-600 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200"
                                 onClick={() => setIsOpen(false)}
                               >
-                                {dropdown.icon && <span className="mr-3 text-red-400">{dropdown.icon}</span>}
+                                {dropdown.icon && <span className="mr-3 text-green-400">{dropdown.icon}</span>}
                                 <span>{dropdown.name}</span>
                               </Link>
                             ))}
@@ -241,10 +241,10 @@ services.map((item)=>{
                     ) : (
                       <Link
                         to={item.path}
-                        className="flex items-center px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-red-50 hover:text-red-600 rounded-xl transition-all duration-200"
+                        className="flex items-center px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-green-50 hover:to-green-50 hover:text-green-600 rounded-xl transition-all duration-200"
                         onClick={() => setIsOpen(false)}
                       >
-                        <span className="mr-3 text-red-500">{item.icon}</span>
+                        <span className="mr-3 text-green-500">{item.icon}</span>
                         <span className="font-medium">{item.name}</span>
                       </Link>
                     )}
@@ -255,7 +255,7 @@ services.map((item)=>{
                 <div className="pt-4 border-t border-slate-200 mt-4">
                   <Link 
                     to="/contact"
-                    className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-red-500 to-red-500 text-white rounded-xl font-semibold shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300"
+                    className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-green-500 to-green-500 text-white rounded-xl font-semibold shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300"
                     onClick={() => setIsOpen(false)}
                   >
                     <Contact className="mr-2" size={18} />

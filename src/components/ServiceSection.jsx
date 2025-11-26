@@ -27,10 +27,10 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-6">
-          <div className="inline-flex items-center justify-center px-4 py-1.5 bg-red-50 rounded-full mb-4">
-            <span className="text-red-600 font-medium text-sm">OUR SERVICES</span>
+          <div className="inline-flex items-center justify-center px-4 py-1.5 bg-green-50 rounded-full mb-4">
+            <span className="text-green-600 font-medium text-sm">OUR SERVICES</span>
           </div>
-          <h2 className="text-4xl play font-bold text-gray-900 mb-4">Comprehensive <span className="text-red-600">Airport Solutions</span></h2>
+          <h2 className="text-4xl play font-bold text-gray-900 mb-4">Comprehensive <span className="text-green-600">Airport Solutions</span></h2>
           <p className="text-gray-600 text-lg">
             JK Contractor delivers a wide range of specialized services designed to enhance airport operations, 
             maintain facilities, and ensure sustainable practices across all areas.
@@ -45,7 +45,7 @@ const ServicesSection = () => {
               onClick={() => setActiveFilter(category.id)}
               className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
                 activeFilter === category.id 
-                  ? 'bg-red-600 text-white shadow-lg shadow-red-200' 
+                  ? 'bg-green-600 text-white shadow-lg shadow-green-200' 
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -89,7 +89,7 @@ const ServicesSection = () => {
                 {/* Read More Link */}
                 <Link  
                   to={`/services/${service.slug}`} 
-                  className="inline-flex items-center font-medium text-red-600 hover:text-red-700 transition-colors"
+                  className="inline-flex items-center font-medium text-green-600 hover:text-green-700 transition-colors"
                  
                 >
                   Read More
@@ -107,13 +107,13 @@ const ServicesSection = () => {
         {/* <div className="mt-10 text-center">
           <Link 
             to="/services" 
-            className="inline-flex items-center justify-center bg-red-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-red-700 transition-colors shadow-lg shadow-red-200/40 group"
+            className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-green-700 transition-colors shadow-lg shadow-green-200/40 group"
           >
             View All Services
             <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Link>
           
-          <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-24 h-24 bg-red-50 rounded-full blur-3xl opacity-70"></div>
+          <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-24 h-24 bg-green-50 rounded-full blur-3xl opacity-70"></div>
         </div> */}
         
         {/* Services Overview */}

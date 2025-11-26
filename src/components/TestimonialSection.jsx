@@ -82,15 +82,15 @@ export default function TestimonialSection() {
           {/* Left Side Content */}
           <div className="space-y-6">
             
-            <div className="inline-flex items-center justify-center px-4 py-1.5 bg-red-50 rounded-full mb-4">
-            <span className="text-red-600 font-medium text-sm">
+            <div className="inline-flex items-center justify-center px-4 py-1.5 bg-green-50 rounded-full mb-4">
+            <span className="text-green-600 font-medium text-sm">
             Testimonials
             </span>
           </div>
             
             <h2 className="text-3xl play lg:text-5xl font-bold text-gray-900 leading-tight">
               What Our Clients Say About{" "}
-              <span className="text-red-600">JK Construction</span>
+              <span className="text-green-600">JK Construction</span>
             </h2>
             
             <p className="text-gray-600 text-lg leading-relaxed">
@@ -101,7 +101,7 @@ export default function TestimonialSection() {
             <div className="flex items-center space-x-4 pt-4">
               <button
                 onClick={handlePrev}
-                className="p-3 rounded-full bg-white shadow-md text-red-600 hover:bg-red-50 transition-colors border border-gray-200"
+                className="p-3 rounded-full bg-white shadow-md text-green-600 hover:bg-green-50 transition-colors border border-gray-200"
               >
                 <ChevronLeft size={20} />
               </button>
@@ -111,7 +111,7 @@ export default function TestimonialSection() {
                   <span
                     key={index}
                     className={`block w-2 h-2 rounded-full transition-colors ${
-                      index === currentIndex ? "bg-red-600" : "bg-gray-300"
+                      index === currentIndex ? "bg-green-600" : "bg-gray-300"
                     }`}
                   />
                 ))}
@@ -119,7 +119,7 @@ export default function TestimonialSection() {
               
               <button
                 onClick={handleNext}
-                className="p-3 rounded-full bg-white shadow-md text-red-600 hover:bg-red-50 transition-colors border border-gray-200"
+                className="p-3 rounded-full bg-white shadow-md text-green-600 hover:bg-green-50 transition-colors border border-gray-200"
               >
                 <ChevronRight size={20} />
               </button>

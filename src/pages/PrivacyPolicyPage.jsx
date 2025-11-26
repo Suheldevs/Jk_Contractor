@@ -108,9 +108,9 @@ const PrivacyPolicyPage = () => {
               const IconComponent = section.icon;
               return (
                 <div key={section.id} className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                  <div className="bg-gradient-to-r from-red-50 to-red-100 px-8 py-6">
+                  <div className="bg-gradient-to-r from-green-50 to-green-100 px-8 py-6">
                     <div className="flex items-center">
-                      <div className="bg-red-500 p-3 rounded-full mr-4">
+                      <div className="bg-green-500 p-3 rounded-full mr-4">
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                       <h2 className="text-2xl font-bold text-gray-900">
@@ -140,7 +140,7 @@ const PrivacyPolicyPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gray-50 rounded-2xl p-8">
             <div className="flex items-center mb-6">
-              <div className="bg-red-500 p-3 rounded-full mr-4">
+              <div className="bg-green-500 p-3 rounded-full mr-4">
                 <Calendar className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900">
@@ -168,7 +168,7 @@ const PrivacyPolicyPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="flex items-center mb-6">
-              <div className="bg-red-500 p-3 rounded-full mr-4">
+              <div className="bg-green-500 p-3 rounded-full mr-4">
                 <Eye className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900">

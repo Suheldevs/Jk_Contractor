@@ -83,7 +83,7 @@ useEffect(() => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Back Button */}
-        <Link to="/blog" className="inline-flex items-center text-red-600 hover:text-red-700 font-medium mb-4 group transition-all duration-300">
+        <Link to="/blog" className="inline-flex items-center text-green-600 hover:text-green-700 font-medium mb-4 group transition-all duration-300">
           <ChevronLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
           Back to all articles
         </Link>
@@ -100,7 +100,7 @@ useEffect(() => {
               </h1>
               
               <div className="flex items-center mb-8">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center text-white font-bold text-lg mr-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center text-white font-bold text-lg mr-4">
                   A
                 </div>
                 <div>
@@ -121,7 +121,7 @@ useEffect(() => {
             </div>
             
             {/* Blog Content */}
-            <div className="prose blog lg:prose-xl max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-red-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-blockquote:border-red-500 prose-blockquote:bg-red-50 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-lg" 
+            <div className="prose blog lg:prose-xl max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-green-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-blockquote:border-green-500 prose-blockquote:bg-green-50 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-lg" 
                  dangerouslySetInnerHTML={{ __html: blog?.description || "" }}> 
             </div>
             
@@ -131,9 +131,9 @@ useEffect(() => {
           <div className="lg:col-span-3">
             <div className="sticky top-8">
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                <div className="bg-gradient-to-r from-red-500 to-red-600 p-6 text-white">
+                <div className="bg-gradient-to-r from-green-500 to-green-600 p-6 text-white">
                   <h2 className="text-xl font-bold">Related Articles</h2>
-                  <p className="text-red-100 text-sm mt-1">You might also like</p>
+                  <p className="text-green-100 text-sm mt-1">You might also like</p>
                 </div>
                 
                 <div className="p-2">
@@ -150,11 +150,11 @@ useEffect(() => {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                           </div>
                           
-                          {/* <span className="text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded-full">
+                          {/* <span className="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full">
                             {article?.category}
                           </span> */}
                           
-                          <h3 className="font-bold text-sm mt-2 line-clamp-2 group-hover:text-red-600 transition-colors duration-300 leading-snug">
+                          <h3 className="font-bold text-sm mt-2 line-clamp-2 group-hover:text-green-600 transition-colors duration-300 leading-snug">
                             {article?.title}
                           </h3>
                           
@@ -170,7 +170,7 @@ useEffect(() => {
                   <div className="mt-6 pt-6 border-t border-gray-100">
                     <Link 
                       to="/blog" 
-                      className="flex items-center justify-center w-full bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold py-3 px-4 rounded-xl hover:shadow-lg transition-all duration-300 group"
+                      className="flex items-center justify-center w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-3 px-4 rounded-xl hover:shadow-lg transition-all duration-300 group"
                     >
                       View All Articles
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />

@@ -194,7 +194,7 @@
     //   'https://picsum.photos/600/400?random=62'
     // ],
     category: ['facility'],
-    color: 'bg-red-500',
+    color: 'bg-green-500',
     features: [
       'Multi-cuisine catering',
       'Hygienic and FSSAI-compliant kitchens',

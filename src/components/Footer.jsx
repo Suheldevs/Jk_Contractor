@@ -26,7 +26,7 @@ export default function Footer() {
                 <div className="flex-shrink-0 group">
                   <Link to="/" className="flex items-center space-x-3">
                     <div
-                      className={`relative w-12 h-12 rounded-2xl transition-all duration-300 bg-gradient-to-br from-red-600 to-red-600 shadow-lg shadow-orange-500/25 group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-orange-500/40`}
+                      className={`relative w-12 h-12 rounded-2xl transition-all duration-300 bg-gradient-to-br from-green-600 to-green-600 shadow-lg shadow-orange-500/25 group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-orange-500/40`}
                     >
                       <div className="absolute inset-0 rounded-2xl bg-white/20 backdrop-blur-sm" />
                       <div className="relative flex items-center justify-center w-full h-full text-white font-bold text-lg">
@@ -48,7 +48,7 @@ export default function Footer() {
                     </div>
                   </Link>
                 </div>
-                {/* <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mb-6"></div> */}
+                {/* <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-green-600 rounded-full mb-6"></div> */}
                 <p className="text-gray-300 leading-relaxed text-sm mt-4">
                   Leading the future of infrastructure with innovative solutions
                   and sustainable practices. Excellence in every project since
@@ -72,11 +72,11 @@ export default function Footer() {
                       key={index}
                       href="#"
                       aria-label={label}
-                      className="group relative w-10 h-10 bg-gradient-to-br from-gray-100 to-gray-200 hover:from-red-600 hover:to-red-700 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-500/25"
+                      className="group relative w-10 h-10 bg-gradient-to-br from-gray-100 to-gray-200 hover:from-green-600 hover:to-green-700 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/25"
                     >
                       <Icon
                         size={18}
-                        className="text-red-600 group-hover:text-white transition-colors duration-300"
+                        className="text-green-600 group-hover:text-white transition-colors duration-300"
                       />
                     </a>
                   ))}
@@ -97,7 +97,7 @@ export default function Footer() {
                       className="flex items-center text-gray-300 hover:text-white transition-all duration-300 group-hover:translate-x-2"
                     >
                       <div className="w-1 h-1 bg-white rounded-full mr-3 group-hover:w-2 group-hover:h-2 transition-all duration-300"></div>
-                      <span className="text-sm group-hover:text-red-400">
+                      <span className="text-sm group-hover:text-green-400">
                         {service.title}
                       </span>
                     </Link>
@@ -129,7 +129,7 @@ export default function Footer() {
                       className="flex items-center text-gray-300 hover:text-white transition-all duration-300 group-hover:translate-x-2"
                     >
                       <div className="w-1 h-1 bg-white rounded-full mr-3 group-hover:w-2 group-hover:h-2 transition-all duration-300"></div>
-                      <span className="text-sm group-hover:text-red-400">
+                      <span className="text-sm group-hover:text-green-400">
                         {link.name}
                       </span>
                     </Link>
@@ -147,23 +147,23 @@ export default function Footer() {
               {/* Contact Info */}
               <ul className="space-y-3">
                 <li className="flex items-center group">
-                  <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:from-red-500/30 group-hover:to-red-600/30 transition-all duration-300">
-                    <Phone size={16} className="text-red-500" />
+                  <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:from-green-500/30 group-hover:to-green-600/30 transition-all duration-300">
+                    <Phone size={16} className="text-green-500" />
                   </div>
                   <a
                     href="tel:9560424031"
-                    className="text-gray-300 hover:text-red-400 transition-colors duration-300 text-sm"
+                    className="text-gray-300 hover:text-green-400 transition-colors duration-300 text-sm"
                   >
                     +91 9560424031
                   </a>
                 </li>
                 <li className="flex items-center group">
-                  <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:from-red-500/30 group-hover:to-red-600/30 transition-all duration-300">
-                    <Mail size={16} className="text-red-500" />
+                  <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:from-green-500/30 group-hover:to-green-600/30 transition-all duration-300">
+                    <Mail size={16} className="text-green-500" />
                   </div>
                   <a
                     href="mailto:jkcontractor786@gmail.com"
-                    className="text-gray-300 hover:text-red-400 transition-colors duration-300 text-sm"
+                    className="text-gray-300 hover:text-green-400 transition-colors duration-300 text-sm"
                   >
                     jkcontractor786@gmail.com
                   </a>
@@ -187,15 +187,15 @@ export default function Footer() {
                     href="https://maps.google.com/?q=New+Delhi+India"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-red-400 hover:text-red-300 transition-colors duration-300 text-xs"
+                    className="flex items-center text-green-400 hover:text-green-300 transition-colors duration-300 text-xs"
                   >
                     View on Maps
                     <ExternalLink size={12} className="ml-1" />
                   </a>
                 </div>
-                <div className="w-full h-32 bg-gradient-to-br from-red-900/20 to-red-800/20 rounded-lg flex items-center justify-center border border-red-500/20">
+                <div className="w-full h-32 bg-gradient-to-br from-green-900/20 to-green-800/20 rounded-lg flex items-center justify-center border border-green-500/20">
                   <div className="text-center">
-                    <MapPin size={24} className="text-red-500 mx-auto mb-2" />
+                    <MapPin size={24} className="text-green-500 mx-auto mb-2" />
                     <p className="text-gray-400 text-xs">New Delhi, India</p>
                     <p className="text-gray-500 text-xs">Click "View on Maps" above</p>
                   </div>
@@ -227,10 +227,10 @@ export default function Footer() {
                   <Link
                     key={index}
                     to={link.path}
-                    className="text-sm text-gray-400 hover:text-red-400 transition-colors duration-300 relative group"
+                    className="text-sm text-gray-400 hover:text-green-400 transition-colors duration-300 relative group"
                   >
                     {link.name}
-                    <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-red-500 to-red-600 group-hover:w-full transition-all duration-300"></div>
+                    <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-green-500 to-green-600 group-hover:w-full transition-all duration-300"></div>
                   </Link>
                 ))}
               </div>

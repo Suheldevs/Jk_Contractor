@@ -39,7 +39,7 @@ const ProjectsSection = () => {
   if (projectData.length == 0) {
     return (
       <>
-        <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+        <div className="text-green-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
           Project Data Not Found!
         </div>
       </>
@@ -48,7 +48,7 @@ const ProjectsSection = () => {
   if (error) {
     return (
       <>
-        <div className="text-red-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
+        <div className="text-green-600 text-lg h-[50vh] justify-center items-center flex font-medium textx-center shadow-2xl rounded p-2">
           {error}
         </div>
       </>
@@ -76,13 +76,13 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center justify-center px-4 py-1.5 bg-red-50 rounded-full mb-4">
-            <span className="text-red-600 font-medium text-sm">
+          <div className="inline-flex items-center justify-center px-4 py-1.5 bg-green-50 rounded-full mb-4">
+            <span className="text-green-600 font-medium text-sm">
               OUR PROJECTS
             </span>
           </div>
           <h2 className="text-4xl play font-bold text-gray-900 mb-4">
-            Featured <span className="text-red-600">Projects</span>
+            Featured <span className="text-green-600">Projects</span>
           </h2>
           <p className="text-gray-600 text-lg">
             Explore our portfolio of successful airport and facility projects
@@ -119,14 +119,14 @@ const ProjectsSection = () => {
                 </div> */}
 
                 {/* Category Badge */}
-                <div className="absolute capitalize top-4 left-4 bg-red-600 text-white text-xs px-2 py-1 rounded">
+                <div className="absolute capitalize top-4 left-4 bg-green-600 text-white text-xs px-2 py-1 rounded">
                   {project.category}
                 </div>
               </div>
 
               {/* Project Title */}
               <div className="p-5 w-full bg-white/50 absolute bottom-0">
-                <h3 className="text-lg font-bold text-gray-900 group-hover:underline underline-offset-2 group-hover:text-red-600 transition-colors">
+                <h3 className="text-lg font-bold text-gray-900 group-hover:underline underline-offset-2 group-hover:text-green-600 transition-colors">
                   {project.title}
                 </h3>
               </div>
@@ -142,7 +142,7 @@ const ProjectsSection = () => {
         <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
                   {/* Close Button */}
                   <button 
-                    className="absolute top-4 right-4 text-white bg-red-600 rounded-full p-2 hover:bg-red-700 transition-colors z-10"
+                    className="absolute top-4 right-4 text-white bg-green-600 rounded-full p-2 hover:bg-green-700 transition-colors z-10"
                     onClick={closeModal}
                   >
                     <X size={24} />
@@ -160,7 +160,7 @@ const ProjectsSection = () => {
                         </div>
                         
                         <div className="p-6 md:p-10">
-                          <div className="inline-flex items-center px-3 py-1 rounded-full bg-red-50 text-red-600 font-medium text-sm mb-4">
+                          <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-50 text-green-600 font-medium text-sm mb-4">
                             {selectedProject.category}
                           </div>
                           
@@ -203,20 +203,20 @@ const ProjectsSection = () => {
                             <h3 className="font-semibold text-gray-900 mb-3">Key Features</h3>
                             <ul className="space-y-2">
                               <li className="flex items-start">
-                                <div className="flex-shrink-0 mr-2 mt-1 w-5 h-5 bg-red-100 rounded-full flex items-center justify-center">
-                                  <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                                <div className="flex-shrink-0 mr-2 mt-1 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
+                                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
                                 </div>
                                 <span className="text-gray-600">Sustainable materials and energy-efficient systems</span>
                               </li>
                               <li className="flex items-start">
-                                <div className="flex-shrink-0 mr-2 mt-1 w-5 h-5 bg-red-100 rounded-full flex items-center justify-center">
-                                  <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                                <div className="flex-shrink-0 mr-2 mt-1 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
+                                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
                                 </div>
                                 <span className="text-gray-600">Advanced security and monitoring integration</span>
                               </li>
                               <li className="flex items-start">
-                                <div className="flex-shrink-0 mr-2 mt-1 w-5 h-5 bg-red-100 rounded-full flex items-center justify-center">
-                                  <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                                <div className="flex-shrink-0 mr-2 mt-1 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
+                                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
                                 </div>
                                 <span className="text-gray-600">Improved passenger flow and accessibility</span>
                               </li>

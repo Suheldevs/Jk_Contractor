@@ -321,7 +321,7 @@ const VehiclesEquipmentPage = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="flex items-center justify-center mb-3">
-                  <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
                     <stat.icon className="w-6 h-6 text-white" />
                   </div>
                 </div>
@@ -346,8 +346,8 @@ const VehiclesEquipmentPage = () => {
               onClick={() => setSelectedCategory(category.id)}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-200 ${
                 selectedCategory === category.id
-                  ? 'bg-red-500 text-white border-red-500'
-                  : 'bg-white text-gray-700 border-gray-300 hover:border-red-300 hover:text-red-600'
+                  ? 'bg-green-500 text-white border-green-500'
+                  : 'bg-white text-gray-700 border-gray-300 hover:border-green-300 hover:text-green-600'
               }`}
             >
               <category.icon className="w-4 h-4" />
@@ -381,10 +381,10 @@ const VehiclesEquipmentPage = () => {
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-red-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
                       {vehicle.name}
                     </h3>
-                    <p className="text-red-600 font-medium text-sm">{vehicle.type}</p>
+                    <p className="text-green-600 font-medium text-sm">{vehicle.type}</p>
                   </div>
                   <div className="bg-green-100 text-green-800 px-2 py-1 rounded-lg text-xs font-medium">
                     {vehicle.status}
@@ -406,7 +406,7 @@ const VehiclesEquipmentPage = () => {
                 
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <span className="text-sm text-gray-500">View Details</span>
-                  <div className="flex items-center gap-2 text-red-600 group-hover:text-red-700 transition-colors">
+                  <div className="flex items-center gap-2 text-green-600 group-hover:text-green-700 transition-colors">
                     <Eye className="w-4 h-4" />
                     <ArrowRight className="w-4 h-4" />
                   </div>
@@ -417,9 +417,9 @@ const VehiclesEquipmentPage = () => {
         </div>
 
         {/* Quality Assurance Section */}
-        <div className="mt-16 bg-gradient-to-r from-red-50 to-red-100 rounded-3xl p-8 border border-red-200">
+        <div className="mt-16 bg-gradient-to-r from-green-50 to-green-100 rounded-3xl p-8 border border-green-200">
           <div className="flex items-center gap-6">
-            <div className="w-20 h-20 bg-red-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+            <div className="w-20 h-20 bg-green-500 rounded-2xl flex items-center justify-center flex-shrink-0">
               <Award className="w-10 h-10 text-white" />
             </div>
             <div>
@@ -470,7 +470,7 @@ const VehiclesEquipmentPage = () => {
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h2 className="text-3xl font-bold text-gray-900 mb-2">{selectedVehicle.name}</h2>
-                  <p className="text-red-600 font-medium text-lg">{selectedVehicle.type}</p>
+                  <p className="text-green-600 font-medium text-lg">{selectedVehicle.type}</p>
                 </div>
                 <div className="text-right">
                   <div className="bg-green-100 text-green-800 px-3 py-1 rounded-lg text-sm font-medium mb-2">
@@ -512,7 +512,7 @@ const VehiclesEquipmentPage = () => {
               </div>
               
               {/* <div className="flex gap-3 mt-8 pt-6 border-t border-gray-200">
-                <button className="flex-1 bg-red-600 text-white px-6 py-3 rounded-xl hover:bg-red-700 transition-colors">
+                <button className="flex-1 bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition-colors">
                   Request Information
                 </button>
                 <button 
