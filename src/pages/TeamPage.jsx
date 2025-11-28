@@ -26,13 +26,6 @@ const TeamPage = () => {
       phone: "+91 98765 43213",
     },
     {
-      name: "SANDEEP KUMAR",
-      position: "CHIEF EXECUTIVE OFFICER",
-      image: "/api/placeholder/300/300",
-      email: "sandeep@company.com",
-      phone: "+91 98765 43216",
-    },
-    {
       name: "VIPIN RATHEE",
       position: "HOD (ADMIN)",
       image: "/api/placeholder/300/300",
