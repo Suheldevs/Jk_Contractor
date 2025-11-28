@@ -78,9 +78,9 @@ export default function ContactUsPage() {
     {
       icon: <Phone className="w-7 h-7" />,
       title: "Call Us",
-      content: "+91 9560424031",
+      content: "+91 9###########",
       details: "Monday to Friday, 9am to 6pm",
-      link:'tel:+91 9560424031',
+      link:'tel:+91 9560424#№#',
       gradient: "from-blue-500 to-blue-600",
       bgGradient: "from-blue-50 to-blue-100"
     },
